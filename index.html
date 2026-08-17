@@ -970,7 +970,7 @@ footer span{color:var(--water);}
   <div class="wrap">
     <div class="eyebrow">Field Frames</div>
     <h2 class="section-title reveal">Gallery</h2>
-    <p class="section-intro reveal">Snapshots from fieldwork, mapping sessions, and research life.</p>
+    <p class="section-intro reveal">My life style</p>
 
     <div class="gallery-grid reveal" id="galleryGrid">
       <div class="gallery-item" data-full="assets/image_01.jpg" data-caption="Fig. 01">
@@ -1069,24 +1069,6 @@ footer span{color:var(--water);}
           <div class="ref-name">Md. Najmul Kabir</div>
           <div class="ref-role">Assistant Professor, Dept. of Geography & Environment, SUST</div>
           <a class="ref-email" href="mailto:n.kabir-gee@sust.edu">n.kabir-gee@sust.edu</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="comment-section reveal">
-      <div class="comment-heading">
-        <h3>Leave a comment</h3>
-        <span class="comment-note">Public · moderated · email notification on new comments</span>
-      </div>
-      <p class="comment-intro">Have a question about the research, spot something to fix, or just want to say hi? Comments are public and I get notified by email at mominul.sust2020@gmail.com.</p>
-      <div class="comment-frame">
-        <div id="disqus_thread"></div>
-        <div class="comment-placeholder" id="commentPlaceholder">
-          Comment box not yet connected — see the setup note left in the HTML
-          (search for <b>DISQUS_SHORTNAME</b>) to switch this on. It takes about
-          two minutes: create a free account at <b>disqus.com</b>, register this
-          site to get a shortname, paste it in, and turn on email notifications
-          in Disqus → Settings → Notifications for mominul.sust2020@gmail.com.
         </div>
       </div>
     </div>
@@ -1221,28 +1203,6 @@ if (reduceMotion) {
   });
 })();
 
-/* ---------- Disqus comment box ----------
-   Replace DISQUS_SHORTNAME below with your own shortname once you create a
-   free account at https://disqus.com and register www.mominul58.me.
-   In Disqus → Settings → Notifications, turn on "Someone comments on one of
-   my posts" for mominul.sust2020@gmail.com to get emailed on new comments.
-   Comments are public by default (no login required to read them). */
-(function disqus(){
-  const DISQUS_SHORTNAME = ""; // e.g. "mominul58"
-  const placeholder = document.getElementById('commentPlaceholder');
-  if (!DISQUS_SHORTNAME) return; // leave the setup placeholder visible
-
-  if (placeholder) placeholder.style.display = 'none';
-  window.disqus_config = function () {
-    this.page.url = "https://www.mominul58.me/#contact";
-    this.page.identifier = "mominul58-me-contact";
-    this.page.title = "Md. Mominul Islam — Contact";
-  };
-  const s = document.createElement('script');
-  s.src = `https://${DISQUS_SHORTNAME}.disqus.com/embed.js`;
-  s.setAttribute('data-timestamp', String(+new Date()));
-  (document.head || document.body).appendChild(s);
-})();
 
 /* ---------- Excel-driven content: Publications / Under Review / Projects ----------
    Reads assets/data.xlsx and, if present and reachable, rebuilds the
