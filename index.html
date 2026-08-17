@@ -1048,128 +1048,62 @@ footer span{color:var(--water);}
 <section class="section" id="contact" style="background:var(--bg-alt);">
   <div class="wrap">
     <div class="contact-wrap reveal">
-      
-      <!-- Contact -->
       <div>
         <h2>Let's talk about risk, water, or maps.</h2>
-        <p>
-          Open to collaboration on GIS, hydrological modelling, and climate risk research —
-          or opportunities in geospatial analysis and disaster risk management.
-        </p>
-
+        <p>Open to collaboration on GIS, hydrological modelling, and climate risk research —
+          or opportunities in geospatial analysis and disaster risk management.</p>
         <div class="contact-links">
-          <a href="mailto:mominul.sust2020@gmail.com">
-            <span class="ic">✉</span>
-            mominul.sust2020@gmail.com
-          </a>
-
-          <a href="https://www.linkedin.com/in/mominul58/"
-             target="_blank"
-             rel="noopener">
-            <span class="ic">in</span>
-            linkedin.com/in/mominul58
-          </a>
-
-          <a href="https://scholar.google.com/citations?user=A0AwIwEAAAAJ&hl=en"
-             target="_blank"
-             rel="noopener">
-            <span class="ic">◎</span>
-            Google Scholar Profile
-          </a>
+          <a href="mailto:mominul.sust2020@gmail.com"><span class="ic">✉</span> mominul.sust2020@gmail.com</a>
+          <a href="https://www.linkedin.com/in/mominul58/" target="_blank" rel="noopener"><span class="ic">in</span> linkedin.com/in/mominul58</a>
+          <a href="https://scholar.google.com/citations?user=A0AwIwEAAAAJ&hl=en" target="_blank" rel="noopener"><span class="ic">◎</span> Google Scholar Profile</a>
         </div>
       </div>
-
-
-      <!-- References -->
       <div>
         <div class="col-heading">References</div>
-
         <div class="ref-card">
           <div class="ref-name">Dr. Md. Anowarul Islam</div>
-          <div class="ref-role">
-            Associate Professor, Dept. of Geography & Environment, SUST
-          </div>
-          <a class="ref-email" href="mailto:anowar-gee@sust.edu">
-            anowar-gee@sust.edu
-          </a>
+          <div class="ref-role">Associate Professor, Dept. of Geography & Environment, SUST</div>
+          <a class="ref-email" href="mailto:anowar-gee@sust.edu">anowar-gee@sust.edu</a>
         </div>
-
         <div class="ref-card">
           <div class="ref-name">Md. Najmul Kabir</div>
-          <div class="ref-role">
-            Assistant Professor, Dept. of Geography & Environment, SUST
-          </div>
-          <a class="ref-email" href="mailto:n.kabir-gee@sust.edu">
-            n.kabir-gee@sust.edu
-          </a>
+          <div class="ref-role">Assistant Professor, Dept. of Geography & Environment, SUST</div>
+          <a class="ref-email" href="mailto:n.kabir-gee@sust.edu">n.kabir-gee@sust.edu</a>
         </div>
       </div>
-
     </div>
 
-
-    <!-- ============================================================
-         COMMENTS — GISCUS
-         ============================================================ -->
     <div class="comment-section reveal">
-
       <div class="comment-heading">
         <h3>Leave a comment</h3>
-        <span class="comment-note">
-          Public · powered by GitHub Discussions
-        </span>
+        <span class="comment-note">Public · powered by GitHub Discussions · you'll get GitHub email alerts</span>
       </div>
-
-      <p class="comment-intro">
-        Have a question about the research, spot something to fix, or just want
-        to say hi? Comments are public. Sign in with GitHub to join the discussion.
-      </p>
-
+      <p class="comment-intro">Have a question about the research, spot something to fix, or just want to say hi? Comments are public. Sign in with GitHub to post — I'll see it via GitHub notifications to mominul.sust2020@gmail.com.</p>
       <div class="comment-frame">
-
-        <!-- Giscus comment system -->
-        <script src="https://giscus.app/client.js"
-                data-repo="mominul58/mominul58.github.io"
-                data-repo-id="R_kgDOTdC6YQ"
-                data-category="Comments"
-                data-category-id="DIC_kwDOTdC6Yc4DDkw8"
-                data-mapping="url"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="preferred_color_scheme"
-                data-lang="en"
-                crossorigin="anonymous"
-                async>
-        </script>
-
+        <div id="giscusContainer"></div>
+        <div class="comment-placeholder" id="commentPlaceholder">
+          Comment box not yet connected — see the setup note left in the HTML
+          (search for <b>GISCUS_REPO</b>) to switch this on. Steps: (1) make sure
+          this site's GitHub repo is public with <b>Discussions</b> enabled
+          (repo → Settings → Features → Discussions). (2) Install the free
+          <b>giscus</b> app on that repo at github.com/apps/giscus. (3) Go to
+          <b>giscus.app</b>, enter your repo, pick or create a Discussion
+          category (e.g. "Comments"), and copy the four values it generates.
+          (4) Paste those four values into the four GISCUS_ constants in
+          index.html. (5) At github.com/settings/notifications, turn on email
+          for "Watching" and watch this repo — that's how you'll get emailed
+          at mominul.sust2020@gmail.com when someone comments.
+        </div>
       </div>
-
     </div>
-
   </div>
 </section>
 
-
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
 <footer>
-  © <span id="year"></span> Md. Mominul Islam — Sylhet, Bangladesh.
-  Last updated <span id="lastUpdated">August 2026</span>.
+  © <span id="year"></span> Md. Mominul Islam — Sylhet, Bangladesh. Last updated <span id="lastUpdated">August 2026</span>.
 </footer>
 
-
 <script>
-  // Automatically update copyright year
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // ------------------------------------------------------------
-  // Your other JavaScript can continue below
-  // ------------------------------------------------------------
-
-</script>
 /* ---------- Mobile nav toggle ---------- */
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
