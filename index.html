@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md. Mominul Islam — Geospatial Scientist & Hydro-Climate Risk Researcher</title>
+<meta name="description" content="Portfolio of Md. Mominul Islam — GIS, Remote Sensing, Hydrological Modelling and Climate Risk research from Sylhet, Bangladesh.">
+
+<meta property="og:title" content="Md. Mominul Islam — Geospatial Scientist & Hydro-Climate Risk Researcher">
+<meta property="og:description" content="GIS, Remote Sensing, Hydrological Modelling and Climate Risk research from Sylhet, Bangladesh.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mominul58.me">
+<meta property="og:image" content="https://www.mominul58.me/assets/mominul.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%230a0f16'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%234fa8c9'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+
+<style>
+/* ============================================================
+   DESIGN TOKENS — change these to re-skin the whole site
+   ============================================================ */
+:root{
+  --bg:        #0a0f16;
+  --bg-alt:    #0d141d;
+  --panel:     #121b26;
+  --panel-2:   #16212e;
+  --line:      #223244;
+  --line-soft: #1a2734;
+
+  --text:      #eef2f6;
+  --text-mute: #93a5b8;
+  --text-dim:  #5c6d80;
+
+  --water:     #4fa8c9;   /* rivers / primary accent */
+  --water-dim: #3a7b95;
+  --amber:     #d99a3f;   /* moderate risk / Q2 */
+  --brick:     #c1543f;   /* high risk / Q1 highlight */
+  --moss:      #6f9c6a;   /* stable / Q1 alt-green */
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+
+  --maxw: 1120px;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--water-dim); color:#fff;}
+
+a{color:var(--water); text-decoration:none;}
+a:hover{color:#fff;}
+a:focus-visible, button:focus-visible{outline:2px solid var(--water); outline-offset:3px;}
+
+img{max-width:100%; display:block;}
+
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; letter-spacing:-0.01em;}
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--water);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:"";
+  width:22px; height:1px;
+  background:var(--water);
+  display:inline-block;
+}
+
+.section{padding:96px 0;}
+.section-title{font-size:clamp(28px,3.4vw,40px); margin-bottom:8px;}
+.section-intro{color:var(--text-mute); max-width:640px; margin-bottom:48px; font-size:17px;}
+
+@media (max-width:640px){
+  .section{padding:64px 0;}
+  .wrap{padding:0 20px;}
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+header.nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  backdrop-filter:blur(10px);
+  background:rgba(10,15,22,0.72);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:0 32px;
+  height:64px; display:flex; align-items:center; justify-content:space-between;
+}
+.nav-mark{
+  font-family:var(--font-mono); font-size:14px; letter-spacing:0.05em;
+  color:var(--text); display:flex; align-items:center; gap:8px;
+}
+.nav-mark .dot{width:7px; height:7px; border-radius:50%; background:var(--water); box-shadow:0 0 8px var(--water);}
+.nav-links{display:flex; gap:19px; list-style:none;}
+.nav-links a{
+  font-family:var(--font-mono); font-size:13px; color:var(--text-mute);
+  letter-spacing:0.03em;
+}
+.nav-links a:hover{color:var(--text);}
+.nav-cv{
+  font-family:var(--font-mono); font-size:12.5px; white-space:nowrap;
+  border:1px solid var(--line); padding:7px 13px; border-radius:3px;
+  color:var(--text) !important;
+}
+.nav-cv:hover{border-color:var(--water); background:rgba(79,168,201,0.08);}
+.nav-toggle{display:none; background:none; border:0; color:var(--text); font-size:22px; cursor:pointer;}
+
+@media (max-width:820px){
+  .nav-links{
+    position:fixed; top:64px; left:0; right:0; bottom:0;
+    background:var(--bg); flex-direction:column; padding:32px;
+    transform:translateX(100%); transition:transform .3s ease;
+    gap:22px;
+  }
+  .nav-links.open{transform:translateX(0);}
+  .nav-links a{font-size:16px;}
+  .nav-toggle{display:block;}
+  .nav-cv{display:none;}
+}
+
+/* ============================================================
+   HERO — topographic contour field + coordinate crosshair
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+  overflow:hidden;
+  padding-top:64px;
+  cursor:crosshair;
+}
+.hero-bg{position:absolute; inset:0; z-index:0;}
+.hero-bg svg{width:100%; height:100%;}
+.contour-line{fill:none; stroke:var(--line); stroke-width:1;}
+.contour-line.hi{stroke:var(--water); stroke-opacity:0.35;}
+
+.crosshair-h, .crosshair-v{
+  position:absolute; z-index:1; pointer-events:none;
+  background:linear-gradient(90deg, transparent, rgba(79,168,201,0.35), transparent);
+  opacity:0; transition:opacity .25s ease;
+}
+.crosshair-h{left:0; right:0; height:1px;}
+.crosshair-v{top:0; bottom:0; width:1px; background:linear-gradient(180deg, transparent, rgba(79,168,201,0.35), transparent);}
+.hero.active .crosshair-h, .hero.active .crosshair-v{opacity:1;}
+
+.coord-readout{
+  position:absolute; z-index:2; pointer-events:none;
+  font-family:var(--font-mono); font-size:11.5px; color:var(--water);
+  background:rgba(10,15,22,0.85); border:1px solid var(--line);
+  padding:5px 9px; border-radius:2px; white-space:nowrap;
+  opacity:0; transition:opacity .25s ease;
+  transform:translate(14px, 14px);
+}
+.hero.active .coord-readout{opacity:1;}
+
+.hero-inner{
+  position:relative; z-index:3; max-width:var(--maxw); margin:0 auto; padding:0 32px; width:100%;
+  display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+}
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr; gap:40px;}
+}
+.hero-loc{
+  font-family:var(--font-mono); font-size:13px; color:var(--text-dim);
+  letter-spacing:0.08em; margin-bottom:22px;
+}
+.hero-loc span{color:var(--water);}
+.hero h1{
+  font-size:clamp(40px, 7vw, 84px);
+  line-height:0.98;
+  color:#fff;
+  margin-bottom:20px;
+}
+.hero-role{
+  font-family:var(--font-mono);
+  font-size:clamp(14px,1.8vw,17px);
+  color:var(--water);
+  letter-spacing:0.03em;
+  margin-bottom:28px;
+}
+.hero-desc{
+  max-width:560px; color:var(--text-mute); font-size:18px; margin-bottom:36px;
+}
+.hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:56px;}
+.btn{
+  font-family:var(--font-mono); font-size:13.5px;
+  padding:12px 22px; border-radius:3px;
+  border:1px solid var(--line);
+  display:inline-flex; align-items:center; gap:8px;
+  transition:border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn-primary{background:var(--water); border-color:var(--water); color:#08131a !important; font-weight:600;}
+.btn-primary:hover{background:#63b9d6;}
+.btn-ghost{color:var(--text) !important;}
+.btn-ghost:hover{border-color:var(--water); background:rgba(79,168,201,0.08);}
+
+.hero-stats{display:flex; gap:40px; flex-wrap:wrap;}
+.hstat b{
+  display:block; font-family:var(--font-display); font-size:26px; color:#fff;
+}
+.hstat span{font-family:var(--font-mono); font-size:11.5px; color:var(--text-dim); letter-spacing:0.06em; text-transform:uppercase;}
+
+.hero-portrait{position:relative; display:flex; flex-direction:column; align-items:center; gap:14px;}
+.hero-portrait::before{
+  content:"";
+  position:absolute; top:8%; left:50%; transform:translateX(-50%);
+  width:78%; height:78%;
+  background:radial-gradient(closest-side, rgba(79,168,201,0.20), transparent 70%);
+  filter:blur(10px); z-index:0;
+}
+.hero-portrait .frame-ring{
+  position:relative; z-index:1;
+  width:min(300px, 68vw); aspect-ratio:1/1;
+  display:flex; align-items:center; justify-content:center;
+}
+.hero-portrait .frame-ring::before{
+  content:""; position:absolute; inset:-16px;
+  border-radius:50%;
+  border:1px dashed var(--line-soft);
+}
+.hero-portrait .frame-ring::after{
+  content:""; position:absolute; inset:-16px;
+  border-radius:50%;
+  border-top:1.5px solid var(--water);
+  border-right:1.5px solid transparent;
+  animation:ringspin 16s linear infinite;
+}
+@keyframes ringspin{to{transform:rotate(360deg);}}
+@media (prefers-reduced-motion: reduce){
+  .hero-portrait .frame-ring::after{animation:none;}
+}
+.hero-portrait .frame{
+  position:relative; z-index:1;
+  width:100%; height:100%;
+  border-radius:50%;
+  border:1px solid var(--line);
+  overflow:hidden;
+  background:var(--panel);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,0.6), 0 0 0 6px var(--bg);
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.hero-portrait .frame:hover{
+  transform:translateY(-4px) scale(1.015);
+  box-shadow:0 40px 70px -18px rgba(0,0,0,0.65), 0 0 0 6px var(--bg);
+}
+.hero-portrait .frame img{
+  width:100%; height:100%; object-fit:cover;
+  filter:grayscale(0.15) contrast(1.04) saturate(0.92);
+}
+.frame-caption{
+  display:flex; justify-content:space-between; width:min(300px, 68vw);
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.08em;
+  color:var(--text-dim); text-transform:uppercase;
+}
+
+.hero-social{
+  display:flex; gap:8px; align-items:center;
+  font-family:var(--font-mono); font-size:12px;
+}
+.hero-social a{color:var(--text-mute);}
+.hero-social a:hover{color:var(--water);}
+.hero-social .sep{color:var(--line);}
+
+@media (max-width:900px){
+  .hero-portrait{order:-1; margin-bottom:8px;}
+}
+
+.scroll-cue{
+  position:absolute; bottom:28px; left:32px; z-index:3;
+  font-family:var(--font-mono); font-size:11px; color:var(--text-dim);
+  display:flex; align-items:center; gap:8px;
+}
+.scroll-cue .bar{width:1px; height:26px; background:var(--line); position:relative; overflow:hidden;}
+.scroll-cue .bar::after{
+  content:""; position:absolute; top:-100%; left:0; right:0; height:100%;
+  background:var(--water);
+  animation:scrolldrip 2.2s ease-in-out infinite;
+}
+@keyframes scrolldrip{0%{top:-100%;} 60%{top:100%;} 100%{top:100%;}}
+
+@media (max-width:640px){
+  .scroll-cue{display:none;}
+  .hero-stats{gap:26px;}
+}
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+/* ============================================================
+   ABOUT / RESEARCH INTERESTS
+   ============================================================ */
+.about-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:64px; align-items:start;}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr; gap:36px;}}
+.about-text p{color:var(--text-mute); margin-bottom:18px; font-size:17px;}
+.about-text p b{color:var(--text); font-weight:600;}
+
+.layer-list{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:6px; overflow:hidden;}
+.layer{
+  display:flex; align-items:center; gap:14px;
+  padding:14px 18px; border-bottom:1px solid var(--line-soft);
+  font-family:var(--font-mono); font-size:13.5px; color:var(--text-mute);
+  background:var(--panel);
+}
+.layer:last-child{border-bottom:none;}
+.layer .swatch{width:10px; height:10px; border-radius:2px; flex-shrink:0;}
+.layer b{color:var(--text); font-weight:500; font-family:var(--font-body); font-size:14.5px;}
+.layer-list-title{
+  font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--text-dim); padding:12px 18px; background:var(--bg-alt); border-bottom:1px solid var(--line);
+}
+
+/* ============================================================
+   TIMELINE (education + experience)
+   ============================================================ */
+.timeline{position:relative; padding-left:34px;}
+.timeline::before{
+  content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px;
+  background:linear-gradient(var(--water), var(--line) 20%, var(--line) 80%, transparent);
+}
+.tl-item{position:relative; padding-bottom:44px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{
+  content:""; position:absolute; left:-34px; top:6px; width:11px; height:11px;
+  border-radius:50%; background:var(--bg); border:2px solid var(--water);
+}
+.tl-date{font-family:var(--font-mono); font-size:12px; color:var(--water); letter-spacing:0.04em; margin-bottom:6px;}
+.tl-title{font-size:19px; font-weight:600; margin-bottom:4px;}
+.tl-org{color:var(--text-mute); font-size:14.5px; margin-bottom:10px; font-style:italic;}
+.tl-meta{
+  display:inline-block; font-family:var(--font-mono); font-size:12px; color:var(--text-dim);
+  border:1px solid var(--line); padding:3px 9px; border-radius:3px; margin-bottom:10px;
+}
+.tl-desc{color:var(--text-mute); font-size:15.5px; max-width:600px;}
+.tl-desc b{color:var(--text);}
+
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+@media (max-width:820px){.two-col{grid-template-columns:1fr; gap:48px;}}
+.col-heading{
+  font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--text-dim); margin-bottom:28px; padding-bottom:10px; border-bottom:1px solid var(--line);
+}
+
+/* ============================================================
+   SKILLS — instrument panel
+   ============================================================ */
+.skill-panel{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+@media (max-width:700px){.skill-panel{grid-template-columns:1fr;}}
+.skill-cell{background:var(--panel); padding:26px 26px;}
+.skill-cell h4{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--water); margin-bottom:14px;
+}
+.chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+.chip{
+  font-family:var(--font-mono); font-size:12.5px; color:var(--text-mute);
+  border:1px solid var(--line-soft); padding:6px 11px; border-radius:20px;
+  background:var(--bg-alt);
+}
+
+/* ============================================================
+   PUBLICATIONS — field log
+   ============================================================ */
+.pub-group{margin-bottom:44px;}
+.pub-group:last-child{margin-bottom:0;}
+.pub-item{
+  display:grid; grid-template-columns:56px 1fr; gap:18px;
+  padding:20px 0; border-bottom:1px solid var(--line-soft);
+}
+.pub-item:first-child{padding-top:0;}
+.pub-num{font-family:var(--font-mono); font-size:13px; color:var(--text-dim); padding-top:2px;}
+.pub-title{font-size:16px; color:var(--text); margin-bottom:6px; line-height:1.5;}
+.pub-meta{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:8px;}
+.tag{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em;
+  padding:3px 9px; border-radius:3px; text-transform:uppercase;
+}
+.tag-q1{background:rgba(111,156,106,0.14); color:var(--moss); border:1px solid rgba(111,156,106,0.35);}
+.tag-q2{background:rgba(217,154,63,0.14); color:var(--amber); border:1px solid rgba(217,154,63,0.35);}
+.tag-q3{background:rgba(193,84,63,0.14); color:var(--brick); border:1px solid rgba(193,84,63,0.35);}
+.tag-review{background:rgba(79,168,201,0.12); color:var(--water); border:1px solid rgba(79,168,201,0.35);}
+.tag-book{background:rgba(147,165,184,0.12); color:var(--text-mute); border:1px solid var(--line);}
+.pub-link{font-family:var(--font-mono); font-size:12.5px;}
+.pub-journal{color:var(--text-mute); font-size:14px; font-style:italic;}
+
+.review-list{list-style:none;}
+.review-list li{
+  padding:14px 0; border-bottom:1px solid var(--line-soft);
+  font-size:14.5px; color:var(--text-mute); display:flex; gap:14px;
+}
+.review-list li:last-child{border-bottom:none;}
+.review-list .rn{font-family:var(--font-mono); color:var(--text-dim); flex-shrink:0;}
+.review-list b{color:var(--text); font-weight:500;}
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+.proj-list{list-style:none;}
+.proj-list li{
+  padding:16px 0 16px 26px; border-bottom:1px solid var(--line-soft);
+  position:relative; color:var(--text-mute); font-size:15px;
+}
+.proj-list li:last-child{border-bottom:none;}
+.proj-list li::before{
+  content:""; position:absolute; left:0; top:23px; width:8px; height:8px; border-radius:2px;
+}
+.proj-list.done li::before{background:var(--moss);}
+.proj-list.ongoing li::before{background:var(--amber); animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.35;}}
+.status-badge{
+  font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:0.06em;
+  padding:5px 12px; border-radius:20px; display:inline-flex; align-items:center; gap:7px; margin-bottom:20px;
+}
+.status-badge.done{color:var(--moss); border:1px solid rgba(111,156,106,0.35); background:rgba(111,156,106,0.1);}
+.status-badge.ongoing{color:var(--amber); border:1px solid rgba(217,154,63,0.35); background:rgba(217,154,63,0.1);}
+.status-badge i{width:6px; height:6px; border-radius:50%; background:currentColor;}
+
+/* ============================================================
+   MORE (leadership / courses / awards) — card grid
+   ============================================================ */
+.card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+@media (max-width:900px){.card-grid{grid-template-columns:1fr;}}
+.card{background:var(--panel); padding:28px 26px;}
+.card h4{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--water); margin-bottom:16px;
+}
+.card ul{list-style:none;}
+.card li{margin-bottom:14px; font-size:14.5px; color:var(--text-mute);}
+.card li:last-child{margin-bottom:0;}
+.card li b{display:block; color:var(--text); font-weight:500; margin-bottom:2px; font-size:15px;}
+.card li span{font-family:var(--font-mono); font-size:12px; color:var(--text-dim);}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-wrap{
+  background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:56px; display:grid; grid-template-columns:1.2fr 1fr; gap:56px;
+}
+@media (max-width:820px){.contact-wrap{grid-template-columns:1fr; padding:36px 26px; gap:36px;}}
+.contact-wrap h2{font-size:clamp(26px,3.5vw,36px); margin-bottom:16px; color:#fff;}
+.contact-wrap p{color:var(--text-mute); margin-bottom:28px; max-width:440px;}
+.contact-links{display:flex; flex-direction:column; gap:14px;}
+.contact-links a{
+  display:flex; align-items:center; gap:12px;
+  font-family:var(--font-mono); font-size:14.5px; color:var(--text);
+  padding:12px 16px; border:1px solid var(--line); border-radius:6px;
+  transition:border-color .2s ease, background .2s ease;
+}
+.contact-links a:hover{border-color:var(--water); background:rgba(79,168,201,0.06); color:#fff;}
+.contact-links a .ic{color:var(--water); flex-shrink:0;}
+
+.ref-card{border-top:1px solid var(--line); padding-top:20px;}
+.ref-card + .ref-card{margin-top:20px;}
+.ref-name{font-weight:600; color:var(--text); margin-bottom:4px;}
+.ref-role{color:var(--text-mute); font-size:14px; margin-bottom:6px;}
+.ref-email{font-family:var(--font-mono); font-size:12.5px;}
+
+footer{
+  padding:36px 0; text-align:center;
+  color:var(--text-dim); font-family:var(--font-mono); font-size:12.5px;
+  border-top:1px solid var(--line-soft); margin-top:40px;
+}
+footer span{color:var(--water);}
+
+/* ============================================================
+   PUBLICATIONS — extra states (dynamic data)
+   ============================================================ */
+.pub-note{font-family:var(--font-mono); font-size:12px; color:var(--text-dim); letter-spacing:0.02em;}
+.data-loading{font-family:var(--font-mono); font-size:12.5px; color:var(--text-dim); padding:14px 0;}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+}
+@media (max-width:820px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.gallery-grid{grid-template-columns:1fr;}}
+.gallery-item{
+  position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:8px;
+  border:1px solid var(--line); background:var(--panel); cursor:zoom-in;
+}
+.gallery-item img{
+  width:100%; height:100%; object-fit:cover;
+  filter:grayscale(0.1) contrast(1.03) saturate(0.94);
+  transition:transform .5s ease, filter .3s ease;
+}
+.gallery-item:hover img{transform:scale(1.06); filter:grayscale(0) contrast(1.05) saturate(1.05);}
+.gallery-item::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+.gallery-tag{
+  position:absolute; left:10px; bottom:10px; z-index:2;
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.06em;
+  color:#fff; background:rgba(10,15,22,0.72); border:1px solid var(--line-soft);
+  padding:4px 9px; border-radius:3px; text-transform:uppercase;
+  opacity:0; transition:opacity .25s ease;
+}
+.gallery-item:hover .gallery-tag{opacity:1;}
+
+.lightbox{
+  position:fixed; inset:0; z-index:200; display:none;
+  align-items:center; justify-content:center;
+  background:rgba(6,10,15,0.92); backdrop-filter:blur(4px);
+  padding:40px;
+}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:min(1000px,92vw); max-height:86vh; border-radius:6px; box-shadow:0 30px 70px rgba(0,0,0,0.6);}
+.lightbox-close{
+  position:absolute; top:24px; right:28px; z-index:2;
+  font-family:var(--font-mono); font-size:14px; color:var(--text-mute);
+  background:none; border:1px solid var(--line); border-radius:4px;
+  padding:8px 14px; cursor:pointer;
+}
+.lightbox-close:hover{color:#fff; border-color:var(--water);}
+.lightbox-nav{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+  background:rgba(10,15,22,0.6); border:1px solid var(--line); color:var(--text);
+  font-family:var(--font-mono); font-size:20px; width:44px; height:44px; border-radius:50%;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.lightbox-nav:hover{border-color:var(--water); color:#fff;}
+.lightbox-prev{left:20px;} .lightbox-next{right:20px;}
+
+/* ============================================================
+   CONTACT — comment box
+   ============================================================ */
+.comment-section{
+  margin-top:56px; padding-top:40px; border-top:1px solid var(--line);
+}
+.comment-heading{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:8px; flex-wrap:wrap;}
+.comment-heading h3{font-size:20px; color:#fff;}
+.comment-note{
+  font-family:var(--font-mono); font-size:11.5px; color:var(--text-dim);
+  letter-spacing:0.03em;
+}
+.comment-intro{color:var(--text-mute); font-size:14.5px; margin-bottom:22px; max-width:640px;}
+.comment-frame{
+  border:1px solid var(--line); border-radius:8px; background:var(--panel);
+  padding:24px;
+}
+.comment-placeholder{
+  font-family:var(--font-mono); font-size:13px; color:var(--text-dim);
+  line-height:1.8; padding:8px 2px;
+}
+.comment-placeholder b{color:var(--text-mute);}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark"><span class="dot"></span> M. MOMINUL ISLAM</a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#more">More</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-cv">Get in touch →</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="crosshair-h" id="crossH"></div>
+  <div class="crosshair-v" id="crossV"></div>
+  <div class="coord-readout" id="coordReadout">25.0000° N, 89.0000° E</div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-loc">AKHALIYA, SYLHET SADAR, BANGLADESH — <span>25.5206° N, 91.8687° E</span></div>
+      <h1 class="reveal">MD. MOMINUL<br>ISLAM</h1>
+      <div class="hero-role reveal">GEOSPATIAL SCIENTIST · HYDRO-CLIMATE RISK RESEARCHER</div>
+      <p class="hero-desc reveal">
+        I map where climate hazards, water systems, and communities intersect — combining GIS,
+        remote sensing, and explainable machine learning to read risk into Bangladesh's floodplains,
+        river basins, and coastlines.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#publications" class="btn btn-primary">View Publications</a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        <a href="mailto:mominul.sust2020@gmail.com" class="btn btn-ghost">Email</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="hstat"><b id="statPubs">21</b><span>Publications & Reviews</span></div>
+        <div class="hstat"><b id="statProjects">7</b><span>Research Projects</span></div>
+        <div class="hstat"><b>2</b><span>Degrees, SUST</span></div>
+        <div class="hstat"><b>1</b><span>Country, Many Basins</span></div>
+      </div>
+    </div>
+
+    <div class="hero-portrait reveal">
+      <div class="frame-ring">
+        <div class="frame">
+          <img src="assets/mominul.jpg" alt="Portrait of Md. Mominul Islam">
+        </div>
+      </div>
+      <div class="frame-caption">
+        <span>FIG. 01 — FIELD PORTRAIT</span>
+        <span>25.5206°N / 91.8687°E</span>
+      </div>
+      <div class="hero-social">
+        <a href="https://www.linkedin.com/in/mominul58/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <span class="sep">/</span>
+        <a href="https://scholar.google.com/citations?user=A0AwIwEAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><div class="bar"></div> SCROLL</div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="eyebrow">Field Notes</div>
+    <h2 class="section-title reveal">About</h2>
+    <div class="about-grid" style="margin-top:40px;">
+      <div class="about-text reveal">
+        <p>
+          I'm <b>Md. Mominul Islam</b>, a geographer and geospatial analyst from Sylhet, Bangladesh,
+          currently finishing an MS in Geography and Environment at Shahjalal University of Science
+          and Technology (SUST). My thesis reads the Teesta River Basin's shifting water balance
+          through satellite data and explainable machine learning — part of a wider interest in how
+          climate risk shows up on the ground, in river basins, seismic zones, wetlands, and coastal
+          communities alike.
+        </p>
+        <p>
+          I currently work as a <b>GIS Analyst (Water Modelling)</b> at SPEKTER GmbH in Germany,
+          building hydrological and hydraulic models with the MIKE suite and HEC-RAS. Alongside this,
+          I keep an active research line in Bangladesh — earthquake risk, flood susceptibility,
+          drought patterns, and climate-driven migration — usually with a spatial model at the center
+          and a plain question behind it: <b>who is exposed, and why.</b>
+        </p>
+      </div>
+      <div class="reveal">
+        <div class="layer-list">
+          <div class="layer-list-title">Research Interest Layers</div>
+          <div class="layer"><span class="swatch" style="background:var(--water)"></span><b>Machine Learning Algorithms</b></div>
+          <div class="layer"><span class="swatch" style="background:var(--moss)"></span><b>GIS & Remote Sensing</b></div>
+          <div class="layer"><span class="swatch" style="background:var(--brick)"></span><b>Disaster Management</b></div>
+          <div class="layer"><span class="swatch" style="background:var(--amber)"></span><b>Climate Risk & Vulnerability Assessment</b></div>
+          <div class="layer"><span class="swatch" style="background:var(--water-dim)"></span><b>Climate Change</b></div>
+          <div class="layer"><span class="swatch" style="background:#7c8fa8"></span><b>Hydrological Modelling & Flood Risk</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EDUCATION
+     ============================================================ -->
+<section class="section" id="education" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="eyebrow">Academic Record</div>
+    <h2 class="section-title reveal">Education</h2>
+    <p class="section-intro reveal">Two degrees, one department — Geography and Environment at SUST.</p>
+
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-date">2025 — 2026</div>
+        <div class="tl-title">MS in Geography and Environment (Mixed Mode)</div>
+        <div class="tl-org">Shahjalal University of Science and Technology, Sylhet, Bangladesh</div>
+        <div class="tl-meta">CGPA 3.69 / 4.00</div>
+        <div class="tl-desc">
+          <b>Thesis:</b> Seasonal Water Paradox and Compound Hydroclimatic Risk Regimes in
+          Bangladesh's Teesta River Basin — A Remote Sensing and Explainable Machine Learning
+          Assessment.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Feb 2020 — Sep 2025</div>
+        <div class="tl-title">BSc in Geography and Environment</div>
+        <div class="tl-org">Shahjalal University of Science and Technology, Sylhet, Bangladesh</div>
+        <div class="tl-meta">CGPA 3.62 / 4.00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE
+     ============================================================ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Field Work</div>
+    <h2 class="section-title reveal">Experience</h2>
+    <p class="section-intro reveal">From spatial statistics on Bangladesh's seismic and flood risk, to production hydraulic modelling in Germany.</p>
+
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-date">Sep 2025 — Present</div>
+        <div class="tl-title">GIS Analyst (Water Modelling)</div>
+        <div class="tl-org">SPEKTER GmbH, 91074 Herzogenaurach, Germany</div>
+        <div class="tl-desc">Building and running hydrological and hydraulic models (MIKE suite, HEC-RAS) to support water-infrastructure and flood-risk decision-making.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Sep 2022 — Jul 2025</div>
+        <div class="tl-title">Research Assistant</div>
+        <div class="tl-org">Department of Geography and Environment, SUST, Sylhet, Bangladesh</div>
+        <div class="tl-desc">Contributed to spatial-statistical and geospatial research on earthquake risk, river basin morphology, rainwater harvesting siting, and climate-driven migration — spanning most of the publication record below.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS
+     ============================================================ -->
+<section class="section" id="skills" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="eyebrow">Instrument Panel</div>
+    <h2 class="section-title reveal">Skills</h2>
+    <p class="section-intro reveal">Tools I reach for, grouped by what they're for.</p>
+
+    <div class="skill-panel reveal">
+      <div class="skill-cell">
+        <h4>GIS & Remote Sensing</h4>
+        <div class="chip-row">
+          <span class="chip">ArcGIS Pro</span><span class="chip">ArcMap</span>
+          <span class="chip">QGIS</span><span class="chip">Geospatial & Statistical Analysis</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <h4>Hydrological & Hydraulic Modelling</h4>
+        <div class="chip-row">
+          <span class="chip">MIKE Zero</span><span class="chip">MIKE FLOOD</span><span class="chip">MIKE 11</span>
+          <span class="chip">MIKE 21</span><span class="chip">MIKE+</span><span class="chip">MIKE SHE</span>
+          <span class="chip">SMS</span><span class="chip">Civil 3D</span><span class="chip">HEC-RAS</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <h4>Programming & Data Analysis</h4>
+        <div class="chip-row">
+          <span class="chip">R</span><span class="chip">Python</span>
+          <span class="chip">Google Earth Engine (JS)</span><span class="chip">Web Mapping</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <h4>Graphics & Software</h4>
+        <div class="chip-row">
+          <span class="chip">Adobe Illustrator</span><span class="chip">Adobe Photoshop</span>
+          <span class="chip">Microsoft Office Suite</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:24px; display:flex; gap:12px; font-family:var(--font-mono); font-size:13px; color:var(--text-mute);">
+      <span>LANGUAGES:</span><span style="color:var(--text)">English (Fluent)</span>·<span style="color:var(--text)">Bengali (Native)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PUBLICATIONS
+     ============================================================ -->
+<section class="section" id="publications">
+  <div class="wrap">
+    <div class="eyebrow">Field Log</div>
+    <h2 class="section-title reveal">Publications</h2>
+    <p class="section-intro reveal">Journal quartile shown as a signal badge — Q1 highest, Q3 lowest — the way a field instrument reads signal strength.</p>
+
+    <div class="pub-group reveal">
+      <div class="col-heading">Research Articles</div>
+      <div id="pubArticles">
+        <div class="pub-item">
+          <div class="pub-num">01</div>
+          <div>
+            <div class="pub-title"><b>Islam, Md. M.</b>, & Kabir, Md. N. (2026). What Shapes Earthquake Risk in Bangladesh? Geospatial Insights from Physical and Social Factors Using a Spatial Meta-Regression Approach.</div>
+            <div class="pub-journal">Earth Systems and Environment</div>
+            <div class="pub-meta">
+              <span class="tag tag-q1">Q1 Journal</span>
+              <a class="pub-link" href="https://doi.org/10.1007/s41748-026-01089-4" target="_blank" rel="noopener">doi.org/10.1007/s41748-026-01089-4 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">02</div>
+          <div>
+            <div class="pub-title">Mostan, N., Kabir, Md. N., Hasan, Md. M., <b>Islam, Md. M.</b>, & Islam, Md. A. (2026). Understanding morphological and hydrological changes in the Dhaleshwari River basin through remote sensing and GIS-based analysis.</div>
+            <div class="pub-journal">International Journal of River Basin Management, 1–23</div>
+            <div class="pub-meta">
+              <span class="tag tag-q1">Q1 Journal</span>
+              <a class="pub-link" href="https://doi.org/10.1080/15715124.2025.2610998" target="_blank" rel="noopener">doi.org/10.1080/15715124.2025.2610998 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">03</div>
+          <div>
+            <div class="pub-title">Kabir, Md. N., Hasan, M. N., Hridi, T. T., <b>Islam, Md. M.</b>, Barua, E., Mostan, N., & Sayem, S. M. S. (2025). Optimizing Artificial Rainwater Harvesting in the Northwest Zone of Bangladesh: Integrated Machine Learning and a GIS-Based Multicriteria Approach.</div>
+            <div class="pub-journal">Water Conservation Science and Engineering, 10(2), 56</div>
+            <div class="pub-meta">
+              <span class="tag tag-q2">Q2 Journal</span>
+              <a class="pub-link" href="https://doi.org/10.1007/s41101-025-00381-0" target="_blank" rel="noopener">doi.org/10.1007/s41101-025-00381-0 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">04</div>
+          <div>
+            <div class="pub-title">Kabir, M. N., Sikder, M. B., Islam, M. A., Barua, E., <b>Islam, Md. M.</b>, & Hridi, T. T. (2025). Geospatial assessment of climate driven migration in the southwest coastal region of Bangladesh.</div>
+            <div class="pub-journal">Discover Geoscience, 3, 117</div>
+            <div class="pub-meta">
+              <span class="tag tag-q3">Q3 Journal</span>
+              <a class="pub-link" href="https://doi.org/10.1007/s44288-025-00227-1" target="_blank" rel="noopener">doi.org/10.1007/s44288-025-00227-1 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">05</div>
+          <div>
+            <div class="pub-title">Siddika, T., <b>Islam, Md. M.</b>, Azad, M. A. K., Kabir, M. N., Rahman, A., Kunda, M., Alam, A. K. M. R., & Islam, M. A. (2026). A Review of Ecological Vulnerability in Bangladesh's Wetlands: Comparative Insights with Emphasis on Ratargul Swamp Forest.</div>
+            <div class="pub-journal">Wetland</div>
+            <div class="pub-meta">
+              <span class="pub-note">Accepted 4 Aug 2026 — DOI pending</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-num">06</div>
+          <div>
+            <div class="pub-title">Kabir, M. N., Islam, M. A., <b>Islam, Md. M.*</b>, Afrose, T., Biswas, S., Barua, E., & Sayem, S. M. S. Why monthly earthquake forecasting fails in low-seismicity regions? Insights from zero-inflated seismic records and b-value analysis in Bangladesh.</div>
+            <div class="pub-journal">Journal of Earth System Science</div>
+            <div class="pub-meta">
+              <span class="pub-note">Accepted 5 Aug 2026 — DOI pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <div class="col-heading">Book Chapter</div>
+      <div id="pubBookChapter">
+        <div class="pub-item">
+          <div class="pub-num">07</div>
+          <div>
+            <div class="pub-title">Kabir, M. N., Sikdar, M. B., Hasan, M., & <b>Islam, M. M.</b> (2025). Earthquake Preparedness and Awareness among the People of Sylhet City. In N. Islam & A. Paul (Eds.), <i>Sylhet Metropolitan: A Geographical Survey.</i></div>
+            <div class="pub-journal">Centre for Urban Studies, Dhaka</div>
+            <div class="pub-meta"><span class="tag tag-book">Book Chapter</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <div class="col-heading">Conference Participation</div>
+      <div id="pubConference">
+        <div class="pub-item">
+          <div class="pub-num">08</div>
+          <div>
+            <div class="pub-title"><b>Islam, Md. M.*</b>, & Kabir, M. N. (2025). A Meta-Approach to Refining Earthquake Risk Zones in Bangladesh from Geophysical and Socio-Economic Perspectives.</div>
+            <div class="pub-journal">1st International Conference on Geosciences for Sustainable Development Goals (ICGSDG), University of Rajshahi, Bangladesh — Abstract published</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <div class="col-heading">Manuscripts Under Review (<span id="reviewCount">13</span>) — full bibliography, as listed in CV</div>
+      <ul class="review-list" id="reviewList">
+        <li><span class="rn">01</span><span><b>Islam, M. M.</b>, Ahmed, S., Nadim, M. M., Safa, N. R., Nayem, J., & Sani, M. S. S. — Spatial assessment of flood-induced eco-disaster vulnerability using ensemble machine learning in the Surma-Kushiyara Basin, Bangladesh. <i>Discover Geoscience</i></span></li>
+        <li><span class="rn">02</span><span>Mostafa, Z. I. B., <b>Islam, Md. M.</b>, Biswas, S., Kabir, Md. N., Hayakawa, Y. S., Ali, Md. Y., Islam, Md. A., & Terao, T. — Flash flood susceptibility mapping in the northeastern haor basin of Bangladesh using tree-based ensemble models. <i>Spatial Information Research (Springer Nature)</i></span></li>
+        <li><span class="rn">03</span><span>Kabir, M. N., Islam, S., Sikder, M. B., Sayem, S. M. S., Barua, E., & <b>Islam, Md. M.</b> — Geospatial assessment of natural hazards risks in coastal Bangladesh: Focus on communities outside embankments in Barguna. <i>Discover Geoscience (Springer Nature)</i></span></li>
+        <li><span class="rn">04</span><span>Kabir, M. N., Islam, M. A., <b>Islam, Md. M.*</b>, Hridi, T. T., Sakib, T. A., & Seum, A. B. A. — Spatiotemporal Seismic Hazard Assessment of Bangladesh Using Zero-Inflated and Regime-Based Probabilistic Models. <i>Journal of GeoRisk (Taylor & Francis)</i></span></li>
+        <li><span class="rn">05</span><span>Sikder, M. B., Kabir, M. H., Kabir, M. N., <b>Islam, M. M.</b>, Hayakawa, Y. S., Sabbir, S. H., Biswas, S., Kazi, M. F., Rupok, N. A., & Sakib, T. A. — Analyzing the Impact of Climate Change on Internally Displaced Persons in the Central Coast of Bangladesh. <i>Journal of Geographical Systems</i></span></li>
+        <li><span class="rn">06</span><span>Islam, Md. Mohaimenul, <b>Islam, Md. M.</b>, Islam, M. A., Kabir, M. N., & Tawsif, S. — Can Multi-Criteria Decision-Making-Based Flood Risk Assessment Reflect Community Response? Evidence from a Dynamic Floodplain in Bangladesh. <i>Regional Environmental Change</i></span></li>
+        <li><span class="rn">07</span><span>Bhuyan, M. M. H., Islam, M. A., Kabir, M. N., <b>Islam, M. M.</b>, Barua, E., Terao, T., & Hayakawa, Y. S. — Geospatial Identification of Flood-Induced Migration Hotspots in Northeastern Bangladesh Using Deep Learning.</span></li>
+        <li><span class="rn">08</span><span>Hridi, T. T., Kabir, Md. N., <b>Islam, Md. M.</b>, Islam, Md. A., & Mahi, N.-U.-M. — Observation of Drought Patterns in Western Bangladesh through Satellite and Ground-Based Data: An Experimental Study (2014–2024). <i>Discover Hazards (Springer Nature)</i></span></li>
+        <li><span class="rn">09</span><span>Kabir, M. N., <b>Islam, M. M.</b>, Islam, M. A., Hridi, T. T., & Mahi, N. U. M. — Artificial Intelligence in Geography: A Comprehensive Review of Concepts, Methods, and Disciplinary Perspectives. <i>Applied Spatial Analysis and Policy</i></span></li>
+        <li><span class="rn">10</span><span>Kabir, M. N., Islam, M. A., <b>Islam, Md. M.*</b>, Afrose, T., Any, M. K., & Biswas, S. — Non-Stationary Seismic Regimes in Bangladesh Revealed by a Century-Long Earthquake Energy Record (1915–2025). <i>Journal of Seismology</i></span></li>
+        <li><span class="rn">11</span><span>Islam, Md. M., Ahmed, Z., & Basak, R. — Assessing the Impact of Mining on Agricultural Livelihood Vulnerability and Household Food Insecurity in Bangladesh's Largest Coal Mine Area. <i>Global Environmental Change</i></span></li>
+        <li><span class="rn">12</span><span>Folik, F., <b>Islam, Md. M.</b>, & Sani, S. S. — A Multi-Model Geospatial Framework for Assessing Urban Green Space, Surface Heat Dynamics, and Cooling Priorities in Sylhet City Corporation, Bangladesh. <i>Sustainable Cities and Society</i></span></li>
+        <li><span class="rn">13</span><span>Labib, M. I. H., Sani, M. S. S., <b>Islam, M. M.*</b>, Hasan, T., Kabir, M. N., Chowdhury, P., Rupak, N. A., & Islam, M. A. (2026) — Mapping relative irrigation-dependence priority in Bangladesh's Barind Tract using crop-activity-water-stress co-occurrence and explainable surrogate models. <i>Journal of Hydrology</i></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESEARCH PROJECTS
+     ============================================================ -->
+<section class="section" id="projects" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="eyebrow">Survey Status</div>
+    <h2 class="section-title reveal">Research Projects</h2>
+    <p class="section-intro reveal">What's mapped and ready, and what's still being surveyed.</p>
+
+    <div class="two-col">
+      <div class="reveal">
+        <span class="status-badge done"><i></i>Completed — ready to submit</span>
+        <ul class="proj-list done" id="projCompleted">
+          <li>Seasonal Water Paradox and Compound Hydroclimatic Risk Regimes in Bangladesh's Teesta River Basin: A Remote Sensing and Explainable Machine Learning Assessment.</li>
+          <li>Understanding Multi-Hazard Risks in a Changing Climate: A Review of Global Patterns, Drivers, and Impacts (2015–2025).</li>
+          <li>Assessment of Coastal Dynamics-Induced Ecosystem Service Value and Ecotourism Suitability of Sonadia Island in Bangladesh.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <span class="status-badge ongoing"><i></i>Ongoing</span>
+        <ul class="proj-list ongoing" id="projOngoing">
+          <li>Climate Stress, Spatial Vulnerability, and Household Migration in Coastal Bangladesh: A Geospatial Study of Khulna, Satkhira, and Bagerhat.</li>
+          <li>Spatiotemporal Hydro-Environmental Controls on Vegetation Condition in Ratargul Swamp Forest: An Explainable Remote-Sensing and Machine-Learning Assessment.</li>
+          <li>Urban Encroachment and Population Heat Exposure Assessment in Cumilla Sadar, Bangladesh: A Grid-Based Remote Sensing and Machine Learning Approach.</li>
+          <li>Extreme Afternoon Heat in Bangladesh: Long-Term Spatiotemporal Dynamics, Intra-Afternoon Patterns, and Explainable Environmental Drivers.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section class="section" id="gallery" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="eyebrow">Field Frames</div>
+    <h2 class="section-title reveal">Gallery</h2>
+    <p class="section-intro reveal">Snapshots from fieldwork, mapping sessions, and research life.</p>
+
+    <div class="gallery-grid reveal" id="galleryGrid">
+      <div class="gallery-item" data-full="assets/image_01.jpg" data-caption="Fig. 01">
+        <img src="assets/image_01.jpg" alt="Field and research photo 1" loading="lazy">
+        <span class="gallery-tag">Fig. 01</span>
+      </div>
+      <div class="gallery-item" data-full="assets/image_02.jpg" data-caption="Fig. 02">
+        <img src="assets/image_02.jpg" alt="Field and research photo 2" loading="lazy">
+        <span class="gallery-tag">Fig. 02</span>
+      </div>
+      <div class="gallery-item" data-full="assets/image_03.jpg" data-caption="Fig. 03">
+        <img src="assets/image_03.jpg" alt="Field and research photo 3" loading="lazy">
+        <span class="gallery-tag">Fig. 03</span>
+      </div>
+      <div class="gallery-item" data-full="assets/image_04.jpg" data-caption="Fig. 04">
+        <img src="assets/image_04.jpg" alt="Field and research photo 4" loading="lazy">
+        <span class="gallery-tag">Fig. 04</span>
+      </div>
+      <div class="gallery-item" data-full="assets/image_05.jpg" data-caption="Fig. 05">
+        <img src="assets/image_05.jpg" alt="Field and research photo 5" loading="lazy">
+        <span class="gallery-tag">Fig. 05</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox for gallery -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕ Close</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+</div>
+
+<!-- ============================================================
+     MORE — leadership / courses / awards
+     ============================================================ -->
+<section class="section" id="more">
+  <div class="wrap">
+    <div class="eyebrow">Beyond the Fieldwork</div>
+    <h2 class="section-title reveal">Leadership, Training & Awards</h2>
+
+    <div class="card-grid reveal">
+      <div class="card">
+        <h4>Leadership</h4>
+        <ul>
+          <li><b>President</b>, Tangail Students' Association, SUST <span>Feb 2024 – Mar 2025</span></li>
+          <li><b>General Secretary</b>, YouthMappers at SUST <span>Apr 2024 – Present</span></li>
+          <li><b>Asst. General Secretary</b>, GEE Society, SUST <span>Jul 2023 – Oct 2024</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Courses & Training</h4>
+        <ul>
+          <li><b>R Programming for Data Analytics</b>, Cognitive Solution Bangladesh <span>Mar 2025</span></li>
+          <li><b>GIS Analysis with GeoPandas (Python)</b>, GeoDelta Labs <span>Feb 2025</span></li>
+          <li><b>Programming with Python</b>, EDGE IICT, SUST <span>Dec 2024</span></li>
+          <li><b>ArcGIS Pro for Regional Planning</b>, GEE Society, SUST <span>Jul 2024</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Awards</h4>
+        <ul>
+          <li><b>University Merit Scholarship</b>, SUST <span>Fall 2019 – Spring 2020</span></li>
+          <li><b>SUST Higher Education Fellowship/Scholarship</b>, SUST <span>2026</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="section" id="contact" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="contact-wrap reveal">
+      <div>
+        <h2>Let's talk about risk, water, or maps.</h2>
+        <p>Open to collaboration on GIS, hydrological modelling, and climate risk research —
+          or opportunities in geospatial analysis and disaster risk management.</p>
+        <div class="contact-links">
+          <a href="mailto:mominul.sust2020@gmail.com"><span class="ic">✉</span> mominul.sust2020@gmail.com</a>
+          <a href="https://www.linkedin.com/in/mominul58/" target="_blank" rel="noopener"><span class="ic">in</span> linkedin.com/in/mominul58</a>
+          <a href="https://scholar.google.com/citations?user=A0AwIwEAAAAJ&hl=en" target="_blank" rel="noopener"><span class="ic">◎</span> Google Scholar Profile</a>
+        </div>
+      </div>
+      <div>
+        <div class="col-heading">References</div>
+        <div class="ref-card">
+          <div class="ref-name">Dr. Md. Anowarul Islam</div>
+          <div class="ref-role">Associate Professor, Dept. of Geography & Environment, SUST</div>
+          <a class="ref-email" href="mailto:anowar-gee@sust.edu">anowar-gee@sust.edu</a>
+        </div>
+        <div class="ref-card">
+          <div class="ref-name">Md. Najmul Kabir</div>
+          <div class="ref-role">Assistant Professor, Dept. of Geography & Environment, SUST</div>
+          <a class="ref-email" href="mailto:n.kabir-gee@sust.edu">n.kabir-gee@sust.edu</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comment-section reveal">
+      <div class="comment-heading">
+        <h3>Leave a comment</h3>
+        <span class="comment-note">Public · moderated · email notification on new comments</span>
+      </div>
+      <p class="comment-intro">Have a question about the research, spot something to fix, or just want to say hi? Comments are public and I get notified by email at mominul.sust2020@gmail.com.</p>
+      <div class="comment-frame">
+        <div id="disqus_thread"></div>
+        <div class="comment-placeholder" id="commentPlaceholder">
+          Comment box not yet connected — see the setup note left in the HTML
+          (search for <b>DISQUS_SHORTNAME</b>) to switch this on. It takes about
+          two minutes: create a free account at <b>disqus.com</b>, register this
+          site to get a shortname, paste it in, and turn on email notifications
+          in Disqus → Settings → Notifications for mominul.sust2020@gmail.com.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Md. Mominul Islam — Sylhet, Bangladesh. Last updated <span id="lastUpdated">August 2026</span>.
+</footer>
+
+<script>
+/* ---------- Mobile nav toggle ---------- */
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* ---------- Footer year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- Scroll reveal ---------- */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduceMotion) {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+} else {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+/* ---------- Hero: generated topographic contour lines ---------- */
+(function buildContours(){
+  const container = document.getElementById('heroBg');
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 1200 800');
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+
+  // pseudo-random deterministic noise for organic contour shapes
+  function seeded(seed){ let s = seed; return () => { s = (s * 9301 + 49297) % 233280; return s / 233280; }; }
+  const rnd = seeded(42);
+
+  const cx = 620, cy = 420;
+  const rings = 13;
+  for(let i=0;i<rings;i++){
+    const baseR = 70 + i * 55;
+    const points = [];
+    const wob1 = 18 + rnd()*22;
+    const wob2 = 10 + rnd()*16;
+    const phase = rnd()*Math.PI*2;
+    const segs = 48;
+    for(let s=0; s<=segs; s++){
+      const t = (s/segs) * Math.PI * 2;
+      const r = baseR
+        + Math.sin(t*3 + phase) * wob1
+        + Math.cos(t*5 + phase*1.7) * wob2;
+      const x = cx + Math.cos(t) * r * 1.35;
+      const y = cy + Math.sin(t) * r * 0.85;
+      points.push(x.toFixed(1) + ',' + y.toFixed(1));
+    }
+    const path = document.createElementNS(NS,'path');
+    path.setAttribute('d', 'M' + points.join(' L') + ' Z');
+    path.setAttribute('class', 'contour-line' + (i % 4 === 0 ? ' hi' : ''));
+    path.style.opacity = (0.15 + (i/rings)*0.55).toFixed(2);
+    svg.appendChild(path);
+  }
+  container.appendChild(svg);
+})();
+
+/* ---------- Hero: coordinate crosshair tied to mouse position ---------- */
+(function crosshair(){
+  const hero = document.querySelector('.hero');
+  const h = document.getElementById('crossH');
+  const v = document.getElementById('crossV');
+  const readout = document.getElementById('coordReadout');
+  if (!hero) return;
+
+  // Rough bounding box around the Teesta / Surma-Kushiyara basins for a thematic touch
+  const LAT_TOP = 26.55, LAT_BOTTOM = 24.05;   // north -> south
+  const LON_LEFT = 88.35, LON_RIGHT = 92.90;   // west -> east
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    hero.classList.add('active');
+
+    h.style.top = y + 'px';
+    v.style.left = x + 'px';
+
+    const lat = LAT_TOP - (y / rect.height) * (LAT_TOP - LAT_BOTTOM);
+    const lon = LON_LEFT + (x / rect.width) * (LON_RIGHT - LON_LEFT);
+
+    readout.style.left = x + 'px';
+    readout.style.top = y + 'px';
+    readout.textContent = lat.toFixed(4) + '° N, ' + lon.toFixed(4) + '° E';
+  });
+
+  hero.addEventListener('mouseleave', () => hero.classList.remove('active'));
+})();
+
+/* ---------- Gallery lightbox ---------- */
+(function gallery(){
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  if (!items.length) return;
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  const prevBtn = document.getElementById('lightboxPrev');
+  const nextBtn = document.getElementById('lightboxNext');
+  let idx = 0;
+
+  function open(i){
+    idx = (i + items.length) % items.length;
+    img.src = items[idx].dataset.full;
+    img.alt = items[idx].querySelector('img').alt;
+    lightbox.classList.add('open');
+  }
+  function close(){ lightbox.classList.remove('open'); img.src=''; }
+
+  items.forEach((el, i) => el.addEventListener('click', () => open(i)));
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => open(idx - 1));
+  nextBtn.addEventListener('click', () => open(idx + 1));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') open(idx - 1);
+    if (e.key === 'ArrowRight') open(idx + 1);
+  });
+})();
+
+/* ---------- Disqus comment box ----------
+   Replace DISQUS_SHORTNAME below with your own shortname once you create a
+   free account at https://disqus.com and register www.mominul58.me.
+   In Disqus → Settings → Notifications, turn on "Someone comments on one of
+   my posts" for mominul.sust2020@gmail.com to get emailed on new comments.
+   Comments are public by default (no login required to read them). */
+(function disqus(){
+  const DISQUS_SHORTNAME = ""; // e.g. "mominul58"
+  const placeholder = document.getElementById('commentPlaceholder');
+  if (!DISQUS_SHORTNAME) return; // leave the setup placeholder visible
+
+  if (placeholder) placeholder.style.display = 'none';
+  window.disqus_config = function () {
+    this.page.url = "https://www.mominul58.me/#contact";
+    this.page.identifier = "mominul58-me-contact";
+    this.page.title = "Md. Mominul Islam — Contact";
+  };
+  const s = document.createElement('script');
+  s.src = `https://${DISQUS_SHORTNAME}.disqus.com/embed.js`;
+  s.setAttribute('data-timestamp', String(+new Date()));
+  (document.head || document.body).appendChild(s);
+})();
+
+/* ---------- Excel-driven content: Publications / Under Review / Projects ----------
+   Reads assets/data.xlsx and, if present and reachable, rebuilds the
+   Publications, Manuscripts Under Review, and Research Projects lists from it,
+   so editing that spreadsheet (adding, editing, or removing a row) updates the
+   live site without touching this HTML. If the file can't be fetched (e.g. the
+   page is opened locally as a file:// URL instead of served over http/https),
+   the static content already in the page above is left exactly as-is. */
+(function excelData(){
+  const DATA_URL = 'assets/data.xlsx';
+
+  function mdBold(str){
+    if (str === undefined || str === null) return '';
+    return String(str).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+  }
+  function shortDoi(url){
+    return String(url).replace(/^https?:\/\//, '');
+  }
+  function quartileTag(q){
+    q = (q || '').trim().toUpperCase();
+    if (q === 'Q1') return '<span class="tag tag-q1">Q1 Journal</span>';
+    if (q === 'Q2') return '<span class="tag tag-q2">Q2 Journal</span>';
+    if (q === 'Q3') return '<span class="tag tag-q3">Q3 Journal</span>';
+    return '';
+  }
+
+  function renderPubGroup(container, rows, startNum){
+    let n = startNum;
+    container.innerHTML = rows.map(r => {
+      const num = String(n++).padStart(2, '0');
+      const journalLine = r.Journal ? `<div class="pub-journal">${mdBold(r.Journal)}</div>` : '';
+      let metaBits = [];
+      if (r.Category === 'Book Chapter') metaBits.push('<span class="tag tag-book">Book Chapter</span>');
+      if (r.Quartile) metaBits.push(quartileTag(r.Quartile));
+      if (r.DOI) {
+        metaBits.push(`<a class="pub-link" href="${r.DOI}" target="_blank" rel="noopener">${shortDoi(r.DOI)} →</a>`);
+      } else if (r.Note) {
+        metaBits.push(`<span class="pub-note">${mdBold(r.Note)}</span>`);
+      }
+      const meta = metaBits.length ? `<div class="pub-meta">${metaBits.join('')}</div>` : '';
+      return `<div class="pub-item">
+        <div class="pub-num">${num}</div>
+        <div>
+          <div class="pub-title">${mdBold(r.Authors)}. ${mdBold(r.Title)}</div>
+          ${journalLine}
+          ${meta}
+        </div>
+      </div>`;
+    }).join('');
+    return n;
+  }
+
+  function renderUnderReview(rows){
+    const list = document.getElementById('reviewList');
+    const countEl = document.getElementById('reviewCount');
+    if (!list) return;
+    list.innerHTML = rows.map((r, i) => {
+      const num = String(i + 1).padStart(2, '0');
+      const journal = r.Journal ? ` <i>${mdBold(r.Journal)}</i>` : '';
+      return `<li><span class="rn">${num}</span><span>${mdBold(r.Authors)} — ${mdBold(r.Title)}${journal}</span></li>`;
+    }).join('');
+    if (countEl) countEl.textContent = rows.length;
+  }
+
+  function renderProjects(rows){
+    const completed = document.getElementById('projCompleted');
+    const ongoing = document.getElementById('projOngoing');
+    if (!completed || !ongoing) return;
+    const done = rows.filter(r => (r.Status || '').trim().toLowerCase() === 'completed');
+    const live = rows.filter(r => (r.Status || '').trim().toLowerCase() === 'ongoing');
+    completed.innerHTML = done.map(r => `<li>${mdBold(r.Title)}</li>`).join('');
+    ongoing.innerHTML = live.map(r => `<li>${mdBold(r.Title)}</li>`).join('');
+  }
+
+  function updateStats(pubCount, reviewCount, projectCount){
+    const statPubs = document.getElementById('statPubs');
+    const statProjects = document.getElementById('statProjects');
+    if (statPubs) statPubs.textContent = (pubCount + reviewCount) + '+';
+    if (statProjects) statProjects.textContent = projectCount;
+  }
+
+  async function run(){
+    if (typeof XLSX === 'undefined') return; // CDN script blocked/offline — keep static content
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      if (!res.ok) return;
+      const buf = await res.arrayBuffer();
+      const wb = XLSX.read(buf, { type: 'array' });
+
+      const pubSheet = wb.Sheets['Publications'];
+      const reviewSheet = wb.Sheets['UnderReview'];
+      const projSheet = wb.Sheets['Projects'];
+      if (!pubSheet || !reviewSheet || !projSheet) return;
+
+      const pubs = XLSX.utils.sheet_to_json(pubSheet, { defval: '' });
+      const reviews = XLSX.utils.sheet_to_json(reviewSheet, { defval: '' });
+      const projects = XLSX.utils.sheet_to_json(projSheet, { defval: '' });
+
+      const articles = pubs.filter(r => r.Category === 'Research Article');
+      const chapters = pubs.filter(r => r.Category === 'Book Chapter');
+      const conf = pubs.filter(r => r.Category === 'Conference');
+
+      const artNode = document.getElementById('pubArticles');
+      const chapNode = document.getElementById('pubBookChapter');
+      const confNode = document.getElementById('pubConference');
+
+      let n = 1;
+      if (artNode) n = renderPubGroup(artNode, articles, n);
+      if (chapNode) n = renderPubGroup(chapNode, chapters, n);
+      if (confNode) n = renderPubGroup(confNode, conf, n);
+
+      renderUnderReview(reviews);
+      renderProjects(projects);
+      updateStats(pubs.length, reviews.length, projects.length);
+    } catch (e) {
+      // Fetch blocked (e.g. local file:// testing) — static fallback content stays as-is.
+      console.log('Live spreadsheet data not loaded, showing static content:', e.message);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+</body>
+</html>
