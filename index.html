@@ -569,12 +569,33 @@ footer span{color:var(--water);}
 .comment-frame{
   border:1px solid var(--line); border-radius:8px; background:var(--panel);
   padding:24px;
+  min-height:760px;
 }
-.comment-placeholder{
-  font-family:var(--font-mono); font-size:13px; color:var(--text-dim);
-  line-height:1.8; padding:8px 2px;
+
+/* Give the Cusdis form enough height to show all input boxes at once. */
+#cusdis_thread{
+  width:100%;
+  min-height:700px;
 }
-.comment-placeholder b{color:var(--text-mute);}
+#cusdis_thread iframe{
+  display:block;
+  width:100% !important;
+  height:700px !important;
+  min-height:700px !important;
+  border:0;
+}
+
+@media (max-width:640px){
+  .comment-frame{
+    padding:16px;
+    min-height:820px;
+  }
+  #cusdis_thread,
+  #cusdis_thread iframe{
+    height:760px !important;
+    min-height:760px !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1073,27 +1094,25 @@ footer span{color:var(--water);}
       </div>
     </div>
 
-    <div class="comment-section reveal">
+        <div class="comment-section reveal">
       <div class="comment-heading">
         <h3>Leave a comment</h3>
-        <span class="comment-note">Public · powered by GitHub Discussions · you'll get GitHub email alerts</span>
+        <span class="comment-note">Public · powered by Cusdis</span>
       </div>
-      <p class="comment-intro">Have a question about the research, spot something to fix, or just want to say hi? Comments are public. Sign in with GitHub to post — I'll see it via GitHub notifications to mominul.sust2020@gmail.com.</p>
+      <p class="comment-intro">
+        Have a question about my research, spot something to fix, or just want to say hi?
+        Leave a comment below.
+      </p>
       <div class="comment-frame">
-        <div id="giscusContainer"></div>
-        <div class="comment-placeholder" id="commentPlaceholder">
-          Comment box not yet connected — see the setup note left in the HTML
-          (search for <b>GISCUS_REPO</b>) to switch this on. Steps: (1) make sure
-          this site's GitHub repo is public with <b>Discussions</b> enabled
-          (repo → Settings → Features → Discussions). (2) Install the free
-          <b>giscus</b> app on that repo at github.com/apps/giscus. (3) Go to
-          <b>giscus.app</b>, enter your repo, pick or create a Discussion
-          category (e.g. "Comments"), and copy the four values it generates.
-          (4) Paste those four values into the four GISCUS_ constants in
-          index.html. (5) At github.com/settings/notifications, turn on email
-          for "Watching" and watch this repo — that's how you'll get emailed
-          at mominul.sust2020@gmail.com when someone comments.
+        <div id="cusdis_thread"
+          data-host="https://cusdis.com"
+          data-app-id="f6de1bde-1399-4a70-b003-ade7f67c2dcc"
+          data-page-id="mominul58-home"
+          data-page-url="https://www.mominul58.me/"
+          data-page-title="Md. Mominul Islam — Portfolio"
+          data-theme="dark">
         </div>
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
       </div>
     </div>
   </div>
@@ -1225,48 +1244,6 @@ if (reduceMotion) {
     if (e.key === 'ArrowLeft') open(idx - 1);
     if (e.key === 'ArrowRight') open(idx + 1);
   });
-})();
-
-/* ---------- Giscus comment box (public, via GitHub Discussions) ----------
-   Fill in the four GISCUS_ constants below once you've set it up:
-     1. Make sure this site's GitHub repo is public with Discussions enabled
-        (repo → Settings → Features → tick "Discussions").
-     2. Install the free giscus app on that repo: github.com/apps/giscus
-     3. Go to https://giscus.app, enter your repo, pick/create a Discussion
-        category (e.g. "Comments"), and it will show you the exact repo,
-        repo-id, category, and category-id values — copy them below.
-     4. At github.com/settings/notifications, turn on email for "Watching"
-        and watch this repo, so you get emailed at mominul.sust2020@gmail.com
-        whenever someone posts a comment.
-   Comments are public and readable by anyone; posting requires a free
-   GitHub sign-in (standard for giscus, and it keeps spam/bots out). */
-(function giscus(){
-  const GISCUS_REPO        = "mominul58/mominul58.github.io";
-  const GISCUS_REPO_ID     = "R_kgDOTdC6YQ";
-  const GISCUS_CATEGORY    = "Comments";
-  const GISCUS_CATEGORY_ID = "DIC_kwDOTdC6Yc4DDkw8";
-
-  const placeholder = document.getElementById('commentPlaceholder');
-  const container = document.getElementById('giscusContainer');
-  if (!GISCUS_REPO || !GISCUS_REPO_ID || !GISCUS_CATEGORY || !GISCUS_CATEGORY_ID) return; // leave setup placeholder visible
-
-  if (placeholder) placeholder.style.display = 'none';
-  const s = document.createElement('script');
-  s.src = 'https://giscus.app/client.js';
-  s.setAttribute('data-repo', GISCUS_REPO);
-  s.setAttribute('data-repo-id', GISCUS_REPO_ID);
-  s.setAttribute('data-category', GISCUS_CATEGORY);
-  s.setAttribute('data-category-id', GISCUS_CATEGORY_ID);
-  s.setAttribute('data-mapping', 'pathname');
-  s.setAttribute('data-strict', '0');
-  s.setAttribute('data-reactions-enabled', '1');
-  s.setAttribute('data-emit-metadata', '0');
-  s.setAttribute('data-input-position', 'bottom');
-  s.setAttribute('data-theme', 'transparent_dark');
-  s.setAttribute('data-lang', 'en');
-  s.crossOrigin = 'anonymous';
-  s.async = true;
-  if (container) container.appendChild(s);
 })();
 
 /* ---------- Excel-driven content: Publications / Under Review / Projects ----------
