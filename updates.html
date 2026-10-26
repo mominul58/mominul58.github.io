@@ -474,6 +474,19 @@ body.viewer-open{overflow:hidden;}
 @media(prefers-reduced-motion:reduce){.highlight{transition:none;}.highlight:hover{transform:none;}}
 @media print{.research-highlights{grid-template-columns:1fr;}.highlight{break-inside:avoid;}.publication-search{display:none;}}
 
+
+/* Public posts use Meta's Embedded Posts plugin; personal profiles have no Page timeline. */
+.facebook-card{margin:22px 0 18px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--card);}
+.facebook-card-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.facebook-card-head img{width:42px;height:42px;object-fit:cover;border-radius:50%;}
+.facebook-card-head h3{margin:0;font-size:15px;}
+.facebook-card-head span,.facebook-fallback{font-size:12px;color:var(--ink-3);}
+.facebook-post{max-width:500px;margin:0 auto;overflow-x:auto;}
+.facebook-post blockquote{padding:24px 16px;background:var(--surface);border-radius:8px;}
+.facebook-fallback{margin-top:16px;}
+.facebook-profile-link{margin-bottom:24px;}
+@media(max-width:380px){.facebook-card{padding:10px;}}
+
 </style>
 </head>
 <body data-content-version="2026-10-24">
@@ -547,7 +560,25 @@ body.viewer-open{overflow:hidden;}
   <div class="main">
     <div class="banner" role="img" aria-label="Satellite layers over a river floodplain at sunrise"></div>
 
-    <main class="content" id="content"><section class="sec" id="updates" data-label="Updates"><div class="sec-head"><h2>Find me on Facebook</h2></div><div class="soft"><h3>Md. Mominul Islam</h3><p>Research, fieldwork and personal updates from my public Facebook profile.</p><p style="margin-top:18px"><a class="btn primary" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">View my Facebook posts ↗</a></p><p class="lede" style="margin-top:18px">Follow my latest posts on Facebook.</p></div></section><footer>
+    <main class="content" id="content"><section class="sec" id="updates" data-label="Updates">
+        <div class="sec-head"><h2>Facebook posts</h2></div>
+        <p class="lede">Research, fieldwork and personal updates from my public Facebook profile.</p>
+        <article class="facebook-card" aria-label="Public Facebook post by Md. Mominul Islam">
+          <div class="facebook-card-head">
+            <img src="assets/mominul.jpg" alt="" width="42" height="42">
+            <div><h3>Md. Mominul Islam</h3><span>Public Facebook post</span></div>
+          </div>
+          <div class="facebook-post" id="facebookPost">
+            <div class="fb-post" data-href="https://www.facebook.com/mmi006/posts/to-read/122144775111197129/" data-width="500" data-show-text="true">
+              <blockquote cite="https://www.facebook.com/mmi006/posts/to-read/122144775111197129/" class="fb-xfbml-parse-ignore">
+                <p><a href="https://www.facebook.com/mmi006/posts/to-read/122144775111197129/" target="_blank" rel="noopener">Read this public post by Md. Mominul Islam on Facebook</a></p>
+              </blockquote>
+            </div>
+          </div>
+          <p class="facebook-fallback">If the post is unavailable here, <a href="https://www.facebook.com/mmi006/posts/to-read/122144775111197129/" target="_blank" rel="noopener">open the original post ↗</a>.</p>
+        </article>
+        <p class="facebook-profile-link"><a href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">More updates on my Facebook profile ↗</a></p>
+      </section><footer>
           <span>© <span id="year"></span> Md. Mominul Islam, Sylhet, Bangladesh</span>
           <span>Last updated 26 October 2026</span>
         </footer></main>
@@ -859,6 +890,19 @@ document.getElementById('year').textContent = new Date().getFullYear();
   filter();
 })();
 </script>
+
+<div id="fb-root"></div>
+<script>
+/* Let Meta size the post height; keep its minimum width scrollable on narrow screens. */
+(function(){
+  var container = document.getElementById('facebookPost');
+  var post = container && container.querySelector('.fb-post');
+  if (!post) return;
+  post.setAttribute('data-width', String(Math.min(500, Math.max(350, Math.floor(container.clientWidth)))));
+})();
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v24.0"></script>
+
 </body>
 </html>
 
