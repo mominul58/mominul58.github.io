@@ -483,6 +483,16 @@ body.viewer-open{overflow:hidden;}
 .facebook-embed iframe{display:block;width:500px;max-width:none;border:0;transform-origin:top left;}
 .linkedin-embed{max-width:504px;}
 .linkedin-embed iframe{width:504px;}
+.linkedin-preview p{margin:0 0 14px;overflow-wrap:anywhere;}
+.linkedin-preview .hero-kicker{margin-bottom:12px;}
+.linkedin-hashtags{color:var(--link);font-size:12px;}
+.linkedin-post-image{display:block;width:100%;height:auto;object-fit:contain;border-radius:6px;margin-top:18px;}
+.linkedin-original{margin-top:18px;}
+.linkedin-live{display:none;margin-top:18px;border-top:1px solid var(--line);padding-top:14px;}
+.js .linkedin-live{display:block;}
+.linkedin-live summary{cursor:pointer;color:var(--link);font-weight:700;font-size:12px;}
+.linkedin-live .facebook-fallback{margin:12px 0;}
+.linkedin-live .linkedin-embed{margin-top:14px;}
 .facebook-fallback{margin-top:16px;}
 .facebook-profile-link{margin-bottom:24px;}
 @media(max-width:380px){.facebook-card{padding:10px;}}
@@ -563,10 +573,26 @@ body.viewer-open{overflow:hidden;}
     <main class="content" id="content"><section class="sec" id="updates" data-label="Updates">
         <div class="sec-head"><h2>Updates</h2></div>
         <p class="lede">Research, fieldwork and personal updates from LinkedIn and Facebook.</p>
-        <article class="facebook-card linkedin-card" aria-label="LinkedIn post by Md. Mominul Islam">
-          <div class="facebook-embed linkedin-embed" data-post-width="504" data-post-height="838" style="height:838px">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7518063005918564352" height="838" width="504" frameborder="0" allowfullscreen="" title="LinkedIn post by Md. Mominul Islam"></iframe>
+        <article class="facebook-card linkedin-card" aria-label="LinkedIn update about FloodML-Geo">
+          <div class="linkedin-preview">
+            <p class="hero-kicker">LINKEDIN UPDATE</p>
+            <p>Introducing FloodML-Geo: a new QGIS plugin for flood susceptibility mapping with explainable machine learning.</p>
+            <p>Flood and other variables (predictors) raster in. Spatially validated models, SHAP explanations, and susceptibility maps out.</p>
+            <p>Example run: ROC-AUC 0.956 for RF and XGBoost under 5-fold spatial cross-validation. The limits of that run are shown openly in the reports.</p>
+            <p>Results and user guide: <a href="https://lnkd.in/gdcSEazA" target="_blank" rel="noopener">https://lnkd.in/gdcSEazA</a><br>
+            Code and docs: <a href="https://lnkd.in/gYgdx3K3" target="_blank" rel="noopener">https://lnkd.in/gYgdx3K3</a></p>
+            <p>The plugin is available on request.</p>
+            <p class="linkedin-hashtags">#QGIS #FloodRisk #GIS #MachineLearning #ExplainableAI</p>
+            <img class="linkedin-post-image" src="assets/linkedin-floodml-post.jpg" width="800" height="1000" alt="FloodML-Geo infographic showing a flood susceptibility map, model results and workflow" decoding="async">
           </div>
+          <p class="linkedin-original"><a class="btn" href="https://www.linkedin.com/feed/update/urn:li:activity:7518063007126478848?trk=public_post_embed_social-actions-reactions" target="_blank" rel="noopener">View on LinkedIn ↗</a></p>
+          <details class="linkedin-live">
+            <summary>Show interactive LinkedIn post</summary>
+            <p class="facebook-fallback">If LinkedIn does not load, you can read the complete update above.</p>
+            <div class="facebook-embed linkedin-embed" data-post-width="504" data-post-height="838" style="height:838px">
+              <iframe data-src="https://www.linkedin.com/embed/feed/update/urn:li:share:7518063005918564352" height="838" width="504" frameborder="0" allowfullscreen="" title="LinkedIn post by Md. Mominul Islam"></iframe>
+            </div>
+          </details>
         </article>
         <article class="facebook-card" aria-label="Public Facebook post 1 by Md. Mominul Islam">
           <div class="facebook-embed" data-post-height="730" style="height:730px">
@@ -940,6 +966,18 @@ document.getElementById('year').textContent = new Date().getFullYear();
 })();
 </script>
 
+<script>
+/* The on-page preview stays readable even when LinkedIn's frame is blocked. */
+(function(){
+  var details = document.querySelector('.linkedin-live');
+  if (!details) return;
+  details.addEventListener('toggle', function(){
+    if (!details.open) return;
+    var frame = details.querySelector('iframe[data-src]');
+    if (frame && !frame.hasAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
+  });
+})();
+</script>
 </body>
 </html>
 
