@@ -481,6 +481,8 @@ body.viewer-open{overflow:hidden;}
 .facebook-embed{width:100%;max-width:500px;margin:0 auto;overflow-x:auto;overflow-y:hidden;}
 .facebook-embed.is-fitted{overflow:hidden;}
 .facebook-embed iframe{display:block;width:500px;max-width:none;border:0;transform-origin:top left;}
+.linkedin-embed{max-width:504px;}
+.linkedin-embed iframe{width:504px;}
 .facebook-fallback{margin-top:16px;}
 .facebook-profile-link{margin-bottom:24px;}
 @media(max-width:380px){.facebook-card{padding:10px;}}
@@ -559,8 +561,13 @@ body.viewer-open{overflow:hidden;}
     <div class="banner" role="img" aria-label="Satellite layers over a river floodplain at sunrise"></div>
 
     <main class="content" id="content"><section class="sec" id="updates" data-label="Updates">
-        <div class="sec-head"><h2>Facebook posts</h2></div>
-        <p class="lede">Research, fieldwork and personal updates from my public Facebook profile.</p>
+        <div class="sec-head"><h2>Updates</h2></div>
+        <p class="lede">Research, fieldwork and personal updates from LinkedIn and Facebook.</p>
+        <article class="facebook-card linkedin-card" aria-label="LinkedIn post by Md. Mominul Islam">
+          <div class="facebook-embed linkedin-embed" data-post-width="504" data-post-height="838" style="height:838px">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7518063005918564352" height="838" width="504" frameborder="0" allowfullscreen="" title="LinkedIn post by Md. Mominul Islam"></iframe>
+          </div>
+        </article>
         <article class="facebook-card" aria-label="Public Facebook post 1 by Md. Mominul Islam">
           <div class="facebook-embed" data-post-height="730" style="height:730px">
             <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid02GgNsws3oyskWwYdJdSVgq1FL2u921bpL6ujzfxTyqgbEHH8c7s3DovXX3ZCUGVatl&amp;show_text=true&amp;width=500" width="500" height="730" title="Facebook post 1 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -906,18 +913,19 @@ document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 <script>
-/* Fit the full-height 500px post frames proportionally on smaller screens. */
+/* Fit full-height Facebook and LinkedIn posts proportionally on smaller screens. */
 (function(){
   var frames = document.querySelectorAll('.facebook-embed');
   frames.forEach(function(container){
     var frame = container.querySelector('iframe');
     var height = Number(container.getAttribute('data-post-height'));
+    var originalWidth = Number(container.getAttribute('data-post-width') || frame.getAttribute('width') || 500);
     var previousWidth = -1;
     function fit(){
       var width = container.clientWidth;
       if (!width || width === previousWidth) return;
       previousWidth = width;
-      var scale = Math.min(1, width / 500);
+      var scale = Math.min(1, width / originalWidth);
       frame.style.transform = 'scale(' + scale + ')';
       container.style.height = Math.ceil(height * scale) + 'px';
       container.classList.add('is-fitted');
