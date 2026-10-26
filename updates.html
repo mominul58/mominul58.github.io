@@ -475,14 +475,15 @@ body.viewer-open{overflow:hidden;}
 @media print{.research-highlights{grid-template-columns:1fr;}.highlight{break-inside:avoid;}.publication-search{display:none;}}
 
 
-/* Public posts use Meta's Embedded Posts plugin; personal profiles have no Page timeline. */
+/* Facebook's supplied post frames retain their original proportions on smaller screens. */
 .facebook-card{margin:22px 0 18px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--card);}
 .facebook-card-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
 .facebook-card-head img{width:42px;height:42px;object-fit:cover;border-radius:50%;}
 .facebook-card-head h3{margin:0;font-size:15px;}
 .facebook-card-head span,.facebook-fallback{font-size:12px;color:var(--ink-3);}
-.facebook-post{max-width:500px;margin:0 auto;overflow-x:auto;}
-.facebook-post blockquote{padding:24px 16px;background:var(--surface);border-radius:8px;}
+.facebook-embed{width:100%;max-width:500px;margin:0 auto;overflow-x:auto;overflow-y:hidden;}
+.facebook-embed.is-fitted{overflow:hidden;}
+.facebook-embed iframe{display:block;width:500px;max-width:none;border:0;transform-origin:top left;}
 .facebook-fallback{margin-top:16px;}
 .facebook-profile-link{margin-bottom:24px;}
 @media(max-width:380px){.facebook-card{padding:10px;}}
@@ -563,19 +564,55 @@ body.viewer-open{overflow:hidden;}
     <main class="content" id="content"><section class="sec" id="updates" data-label="Updates">
         <div class="sec-head"><h2>Facebook posts</h2></div>
         <p class="lede">Research, fieldwork and personal updates from my public Facebook profile.</p>
-        <article class="facebook-card" aria-label="Public Facebook post by Md. Mominul Islam">
+        <article class="facebook-card" aria-label="Public Facebook post 1 by Md. Mominul Islam">
           <div class="facebook-card-head">
-            <img src="assets/mominul.jpg" alt="" width="42" height="42">
+            <img src="assets/mominul.jpg" alt="" width="42" height="42" loading="lazy">
             <div><h3>Md. Mominul Islam</h3><span>Public Facebook post</span></div>
           </div>
-          <div class="facebook-post" id="facebookPost">
-            <div class="fb-post" data-href="https://www.facebook.com/mmi006/posts/to-read/122144775111197129/" data-width="500" data-show-text="true">
-              <blockquote cite="https://www.facebook.com/mmi006/posts/to-read/122144775111197129/" class="fb-xfbml-parse-ignore">
-                <p><a href="https://www.facebook.com/mmi006/posts/to-read/122144775111197129/" target="_blank" rel="noopener">Read this public post by Md. Mominul Islam on Facebook</a></p>
-              </blockquote>
-            </div>
+          <div class="facebook-embed" data-post-height="717" style="height:717px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid02GgNsws3oyskWwYdJdSVgq1FL2u921bpL6ujzfxTyqgbEHH8c7s3DovXX3ZCUGVatl&amp;show_text=true&amp;width=500" width="500" height="717" title="Facebook post 1 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
-          <p class="facebook-fallback">If the post is unavailable here, <a href="https://www.facebook.com/mmi006/posts/to-read/122144775111197129/" target="_blank" rel="noopener">open the original post ↗</a>.</p>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid02GgNsws3oyskWwYdJdSVgq1FL2u921bpL6ujzfxTyqgbEHH8c7s3DovXX3ZCUGVatl" target="_blank" rel="noopener">Open the original post ↗</a></p>
+        </article>
+        <article class="facebook-card" aria-label="Public Facebook post 2 by Md. Mominul Islam">
+          <div class="facebook-card-head">
+            <img src="assets/mominul.jpg" alt="" width="42" height="42" loading="lazy">
+            <div><h3>Md. Mominul Islam</h3><span>Public Facebook post</span></div>
+          </div>
+          <div class="facebook-embed" data-post-height="447" style="height:447px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0mV5KZVtDcSQqmD8Wc1phMkU1zfPgAwJdauP46A5hEiKJhXZ4evhL5hXtMuPCos8bl&amp;show_text=true&amp;width=500" width="500" height="447" title="Facebook post 2 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          </div>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0mV5KZVtDcSQqmD8Wc1phMkU1zfPgAwJdauP46A5hEiKJhXZ4evhL5hXtMuPCos8bl" target="_blank" rel="noopener">Open the original post ↗</a></p>
+        </article>
+        <article class="facebook-card" aria-label="Public Facebook post 3 by Md. Mominul Islam">
+          <div class="facebook-card-head">
+            <img src="assets/mominul.jpg" alt="" width="42" height="42" loading="lazy">
+            <div><h3>Md. Mominul Islam</h3><span>Public Facebook post</span></div>
+          </div>
+          <div class="facebook-embed" data-post-height="250" style="height:250px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0b5Fc2wxJezHFrkmdWg8uFoNBqxb4dedzcu9185ogUzpuydEhouZsRoYzadSs9LLLl&amp;show_text=true&amp;width=500" width="500" height="250" title="Facebook post 3 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          </div>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0b5Fc2wxJezHFrkmdWg8uFoNBqxb4dedzcu9185ogUzpuydEhouZsRoYzadSs9LLLl" target="_blank" rel="noopener">Open the original post ↗</a></p>
+        </article>
+        <article class="facebook-card" aria-label="Public Facebook post 4 by Md. Mominul Islam">
+          <div class="facebook-card-head">
+            <img src="assets/mominul.jpg" alt="" width="42" height="42" loading="lazy">
+            <div><h3>Md. Mominul Islam</h3><span>Public Facebook post</span></div>
+          </div>
+          <div class="facebook-embed" data-post-height="589" style="height:589px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid03c2MDm4xpKjxsrhBSqGdkgkqC9vLjoPRaT6Vao2CVtFrXCybuRbbT7kp95Uvi1hXl&amp;show_text=true&amp;width=500" width="500" height="589" title="Facebook post 4 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          </div>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid03c2MDm4xpKjxsrhBSqGdkgkqC9vLjoPRaT6Vao2CVtFrXCybuRbbT7kp95Uvi1hXl" target="_blank" rel="noopener">Open the original post ↗</a></p>
+        </article>
+        <article class="facebook-card" aria-label="Public Facebook post 5 by Md. Mominul Islam">
+          <div class="facebook-card-head">
+            <img src="assets/mominul.jpg" alt="" width="42" height="42" loading="lazy">
+            <div><h3>Md. Mominul Islam</h3><span>Public Facebook post</span></div>
+          </div>
+          <div class="facebook-embed" data-post-height="664" style="height:664px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0pXT2nonEvkBj5dDAcH8ygcBERNXFddj7RLWoTstrDHrMzfrJFYQbzvoL59UpLQ7ul&amp;show_text=true&amp;width=500" width="500" height="664" title="Facebook post 5 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          </div>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0pXT2nonEvkBj5dDAcH8ygcBERNXFddj7RLWoTstrDHrMzfrJFYQbzvoL59UpLQ7ul" target="_blank" rel="noopener">Open the original post ↗</a></p>
         </article>
         <p class="facebook-profile-link"><a href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">More updates on my Facebook profile ↗</a></p>
       </section><footer>
@@ -891,17 +928,32 @@ document.getElementById('year').textContent = new Date().getFullYear();
 })();
 </script>
 
-<div id="fb-root"></div>
 <script>
-/* Let Meta size the post height; keep its minimum width scrollable on narrow screens. */
+/* Scale each supplied 500px frame without cropping its text or changing its source. */
 (function(){
-  var container = document.getElementById('facebookPost');
-  var post = container && container.querySelector('.fb-post');
-  if (!post) return;
-  post.setAttribute('data-width', String(Math.min(500, Math.max(350, Math.floor(container.clientWidth)))));
+  var frames = document.querySelectorAll('.facebook-embed');
+  frames.forEach(function(container){
+    var frame = container.querySelector('iframe');
+    var height = Number(container.getAttribute('data-post-height'));
+    var previousWidth = -1;
+    function fit(){
+      var width = container.clientWidth;
+      if (!width || width === previousWidth) return;
+      previousWidth = width;
+      var scale = Math.min(1, width / 500);
+      frame.style.transform = 'scale(' + scale + ')';
+      container.style.height = Math.ceil(height * scale) + 'px';
+      container.classList.add('is-fitted');
+    }
+    fit();
+    if ('ResizeObserver' in window){
+      new ResizeObserver(fit).observe(container);
+    } else {
+      window.addEventListener('resize', fit, { passive: true });
+    }
+  });
 })();
 </script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v24.0"></script>
 
 </body>
 </html>
