@@ -483,32 +483,9 @@ body.viewer-open{overflow:hidden;}
 .facebook-embed iframe{display:block;width:500px;max-width:none;border:0;transform-origin:top left;}
 .linkedin-embed{max-width:504px;}
 .linkedin-embed iframe{width:504px;}
-.linkedin-preview p{margin:0 0 14px;overflow-wrap:anywhere;}
-.linkedin-preview .hero-kicker{margin-bottom:12px;}
-.linkedin-hashtags{color:var(--link);font-size:12px;}
-.linkedin-post-image{display:block;width:100%;height:auto;object-fit:contain;border-radius:6px;margin-top:18px;}
-.linkedin-original{margin-top:18px;}
-.social-live{display:none;margin-top:18px;border-top:1px solid var(--line);padding-top:14px;}
-.js .social-live{display:block;}
-.social-live summary{cursor:pointer;color:var(--link);font-weight:700;font-size:12px;}
-.social-live .facebook-fallback{margin:12px 0;}
-.social-live .facebook-embed{margin-top:14px;}
 .facebook-fallback{margin-top:16px;}
 .facebook-profile-link{margin-bottom:24px;}
 @media(max-width:380px){.facebook-card{padding:10px;}}
-
-
-.post-profile{display:flex;align-items:center;gap:11px;margin:0 0 18px;}
-.post-profile-photo{display:block;flex:0 0 44px;width:44px;height:44px;overflow:hidden;border-radius:50%;border:1px solid var(--line);}
-.post-profile-photo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;}
-.post-profile-meta{min-width:0;display:flex;flex-direction:column;gap:1px;}
-.post-profile-name{font-size:14px;font-weight:700;line-height:1.4;color:var(--ink);}
-.post-platform{font-size:11px;line-height:1.5;color:var(--ink-3);}
-.facebook-preview p{margin:0 0 14px;overflow-wrap:anywhere;}
-.post-media{margin-top:18px;}
-.post-media img{display:block;width:100%;height:auto;object-fit:contain;border-radius:6px;}
-.post-media-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;align-items:start;}
-.post-media a{display:block;min-width:0;}
 
 </style>
 </head>
@@ -586,119 +563,40 @@ body.viewer-open{overflow:hidden;}
     <main class="content" id="content"><section class="sec" id="updates" data-label="Updates">
         <div class="sec-head"><h2>Updates</h2></div>
         <p class="lede">Research, fieldwork and personal updates from LinkedIn and Facebook.</p>
-        <article class="facebook-card linkedin-card" aria-label="LinkedIn update about FloodML-Geo">
-          <header class="post-profile">
-            <a class="post-profile-photo" href="https://www.linkedin.com/in/mominul58/" target="_blank" rel="noopener" aria-label="View my LinkedIn profile"><img src="assets/mominul.jpg" width="44" height="44" alt="Portrait of Md. Mominul Islam" loading="lazy"></a>
-            <div class="post-profile-meta"><a class="post-profile-name" href="https://www.linkedin.com/in/mominul58/" target="_blank" rel="noopener">Md. Mominul Islam</a><span class="post-platform">LinkedIn</span></div>
-          </header>
-          <div class="linkedin-preview">
-            <p>Introducing FloodML-Geo: a new QGIS plugin for flood susceptibility mapping with explainable machine learning.</p>
-            <p>Flood and other variables (predictors) raster in. Spatially validated models, SHAP explanations, and susceptibility maps out.</p>
-            <p>Example run: ROC-AUC 0.956 for RF and XGBoost under 5-fold spatial cross-validation. The limits of that run are shown openly in the reports.</p>
-            <p>Results and user guide: <a href="https://lnkd.in/gdcSEazA" target="_blank" rel="noopener">https://lnkd.in/gdcSEazA</a><br>
-            Code and docs: <a href="https://lnkd.in/gYgdx3K3" target="_blank" rel="noopener">https://lnkd.in/gYgdx3K3</a></p>
-            <p>The plugin is available on request.</p>
-            <p class="linkedin-hashtags">#QGIS #FloodRisk #GIS #MachineLearning #ExplainableAI</p>
-            <img class="linkedin-post-image" src="assets/linkedin-floodml-post.jpg" width="800" height="1000" alt="FloodML-Geo infographic showing a flood susceptibility map, model results and workflow" decoding="async">
+        <article class="facebook-card linkedin-card" aria-label="LinkedIn post by Md. Mominul Islam">
+          <div class="facebook-embed linkedin-embed" data-post-width="504" data-post-height="838" style="height:838px">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7518063005918564352" height="838" width="504" frameborder="0" allowfullscreen="" title="LinkedIn post by Md. Mominul Islam"></iframe>
           </div>
-          <p class="linkedin-original"><a class="btn" href="https://www.linkedin.com/feed/update/urn:li:activity:7518063007126478848?trk=public_post_embed_social-actions-reactions" target="_blank" rel="noopener">View on LinkedIn ↗</a></p>
-          <details class="linkedin-live social-live">
-            <summary>Show interactive LinkedIn post</summary>
-            <p class="facebook-fallback">If LinkedIn does not load, you can read the complete update above.</p>
-            <div class="facebook-embed linkedin-embed" data-post-width="504" data-post-height="838" style="height:838px">
-              <iframe data-src="https://www.linkedin.com/embed/feed/update/urn:li:share:7518063005918564352" height="838" width="504" frameborder="0" allowfullscreen="" title="LinkedIn post by Md. Mominul Islam"></iframe>
-            </div>
-          </details>
         </article>
-        <article class="facebook-card facebook-native" aria-label="Facebook update 1 by Md. Mominul Islam">
-          <header class="post-profile">
-            <a class="post-profile-photo" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener" aria-label="View my Facebook profile"><img src="assets/mominul.jpg" width="44" height="44" alt="Portrait of Md. Mominul Islam" loading="lazy"></a>
-            <div class="post-profile-meta"><a class="post-profile-name" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">Md. Mominul Islam</a><span class="post-platform">Facebook</span></div>
-          </header>
-          <div class="facebook-preview">
-            <p>Before the monsoon even starts, the Haor can go under water in a few days. For the farmers there, the first flood is often the one that takes the crop.</p>
-            <p>Our new paper looks at where that water hits first. Using satellite radar images and machine learning, we mapped flash-flood risk across five Haor upazilas of Kishoreganj. Nearly 40% of the area is at high or very high risk, with Itna and Nikli on top. Now planners have a map to work from.</p>
-            <p>And if you want to try the same kind ...</p>
-            <div class="post-media"><a href="assets/facebook-post-1-1.jpg" target="_blank" rel="noopener" aria-label="View full photo"><img src="assets/facebook-post-1-1.jpg" width="394" height="510" alt="First page of the Haor flash-flood susceptibility research paper" loading="lazy" decoding="async"></a></div>
+        <article class="facebook-card" aria-label="Public Facebook post 1 by Md. Mominul Islam">
+          <div class="facebook-embed" data-post-height="730" style="height:730px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid02GgNsws3oyskWwYdJdSVgq1FL2u921bpL6ujzfxTyqgbEHH8c7s3DovXX3ZCUGVatl&amp;show_text=true&amp;width=500" width="500" height="730" title="Facebook post 1 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
-          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid02GgNsws3oyskWwYdJdSVgq1FL2u921bpL6ujzfxTyqgbEHH8c7s3DovXX3ZCUGVatl" target="_blank" rel="noopener">Read full post on Facebook ↗</a></p>
-          <details class="social-live facebook-live">
-            <summary>Show interactive Facebook post</summary>
-            <div class="facebook-embed" data-post-height="730" style="height:730px">
-            <iframe data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid02GgNsws3oyskWwYdJdSVgq1FL2u921bpL6ujzfxTyqgbEHH8c7s3DovXX3ZCUGVatl&amp;show_text=true&amp;width=500" width="500" height="730" title="Facebook post 1 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-          </div>
-          </details>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid02GgNsws3oyskWwYdJdSVgq1FL2u921bpL6ujzfxTyqgbEHH8c7s3DovXX3ZCUGVatl" target="_blank" rel="noopener">Open the original post ↗</a></p>
         </article>
-        <article class="facebook-card facebook-native" aria-label="Facebook update 2 by Md. Mominul Islam">
-          <header class="post-profile">
-            <a class="post-profile-photo" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener" aria-label="View my Facebook profile"><img src="assets/mominul.jpg" width="44" height="44" alt="Portrait of Md. Mominul Islam" loading="lazy"></a>
-            <div class="post-profile-meta"><a class="post-profile-name" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">Md. Mominul Islam</a><span class="post-platform">Facebook</span></div>
-          </header>
-          <div class="facebook-preview">
-            <p>জমিদারি ক্লেইম করতে গিয়েছিলাম সেদিন জমিদার বাড়িতে!</p>
-            <div class="post-media"><a href="assets/facebook-post-2-1.jpg" target="_blank" rel="noopener" aria-label="View full photo"><img src="assets/facebook-post-2-1.jpg" width="526" height="375" alt="Photo at a historic zamindar house" loading="lazy" decoding="async"></a></div>
+        <article class="facebook-card" aria-label="Public Facebook post 2 by Md. Mominul Islam">
+          <div class="facebook-embed" data-post-height="460" style="height:460px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0mV5KZVtDcSQqmD8Wc1phMkU1zfPgAwJdauP46A5hEiKJhXZ4evhL5hXtMuPCos8bl&amp;show_text=true&amp;width=500" width="500" height="460" title="Facebook post 2 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
-          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0mV5KZVtDcSQqmD8Wc1phMkU1zfPgAwJdauP46A5hEiKJhXZ4evhL5hXtMuPCos8bl" target="_blank" rel="noopener">View on Facebook ↗</a></p>
-          <details class="social-live facebook-live">
-            <summary>Show interactive Facebook post</summary>
-            <div class="facebook-embed" data-post-height="460" style="height:460px">
-            <iframe data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0mV5KZVtDcSQqmD8Wc1phMkU1zfPgAwJdauP46A5hEiKJhXZ4evhL5hXtMuPCos8bl&amp;show_text=true&amp;width=500" width="500" height="460" title="Facebook post 2 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-          </div>
-          </details>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0mV5KZVtDcSQqmD8Wc1phMkU1zfPgAwJdauP46A5hEiKJhXZ4evhL5hXtMuPCos8bl" target="_blank" rel="noopener">Open the original post ↗</a></p>
         </article>
-        <article class="facebook-card facebook-native" aria-label="Facebook update 3 by Md. Mominul Islam">
-          <header class="post-profile">
-            <a class="post-profile-photo" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener" aria-label="View my Facebook profile"><img src="assets/mominul.jpg" width="44" height="44" alt="Portrait of Md. Mominul Islam" loading="lazy"></a>
-            <div class="post-profile-meta"><a class="post-profile-name" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">Md. Mominul Islam</a><span class="post-platform">Facebook</span></div>
-          </header>
-          <div class="facebook-preview">
-            <p>&quot;Protecting Our Natural Heritage: Ratargul Swamp Forest&quot;</p>
-            <p>Our new review article &quot;Ecological Vulnerability of Bangladesh’s Major Wetlands: A Comparative Review with Special Reference to Ratargul Swamp Forest&quot; has been published today in Wetlands (IF: 2.4).</p>
-            <p>The study highlights the major threats facing this unique freshwater ecosystem, including intense flash flooding, heavy sedimentation, weak policy implementation, and fragmented coordination.</p>
-            <p>...</p>
-            <div class="post-media"><a href="assets/facebook-post-3-1.jpg" target="_blank" rel="noopener" aria-label="View full photo"><img src="assets/facebook-post-3-1.jpg" width="394" height="523" alt="First page of the Ratargul wetland review paper" loading="lazy" decoding="async"></a></div>
+        <article class="facebook-card" aria-label="Public Facebook post 3 by Md. Mominul Islam">
+          <div class="facebook-embed" data-post-height="730" style="height:730px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0b5Fc2wxJezHFrkmdWg8uFoNBqxb4dedzcu9185ogUzpuydEhouZsRoYzadSs9LLLl&amp;show_text=true&amp;width=500" width="500" height="730" title="Facebook post 3 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
-          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0b5Fc2wxJezHFrkmdWg8uFoNBqxb4dedzcu9185ogUzpuydEhouZsRoYzadSs9LLLl" target="_blank" rel="noopener">Read full post on Facebook ↗</a></p>
-          <details class="social-live facebook-live">
-            <summary>Show interactive Facebook post</summary>
-            <div class="facebook-embed" data-post-height="730" style="height:730px">
-            <iframe data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0b5Fc2wxJezHFrkmdWg8uFoNBqxb4dedzcu9185ogUzpuydEhouZsRoYzadSs9LLLl&amp;show_text=true&amp;width=500" width="500" height="730" title="Facebook post 3 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-          </div>
-          </details>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0b5Fc2wxJezHFrkmdWg8uFoNBqxb4dedzcu9185ogUzpuydEhouZsRoYzadSs9LLLl" target="_blank" rel="noopener">Open the original post ↗</a></p>
         </article>
-        <article class="facebook-card facebook-native" aria-label="Facebook update 4 by Md. Mominul Islam">
-          <header class="post-profile">
-            <a class="post-profile-photo" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener" aria-label="View my Facebook profile"><img src="assets/mominul.jpg" width="44" height="44" alt="Portrait of Md. Mominul Islam" loading="lazy"></a>
-            <div class="post-profile-meta"><a class="post-profile-name" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">Md. Mominul Islam</a><span class="post-platform">Facebook</span></div>
-          </header>
-          <div class="facebook-preview">
-            <p>Dear, Kholpetua. 🌊</p>
-            <div class="post-media"><a href="assets/facebook-post-4-1.jpg" target="_blank" rel="noopener" aria-label="View full photo"><img src="assets/facebook-post-4-1.jpg" width="403" height="504" alt="Photo by the Kholpetua River" loading="lazy" decoding="async"></a></div>
+        <article class="facebook-card" aria-label="Public Facebook post 4 by Md. Mominul Islam">
+          <div class="facebook-embed" data-post-height="603" style="height:603px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid03c2MDm4xpKjxsrhBSqGdkgkqC9vLjoPRaT6Vao2CVtFrXCybuRbbT7kp95Uvi1hXl&amp;show_text=true&amp;width=500" width="500" height="603" title="Facebook post 4 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
-          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid03c2MDm4xpKjxsrhBSqGdkgkqC9vLjoPRaT6Vao2CVtFrXCybuRbbT7kp95Uvi1hXl" target="_blank" rel="noopener">View on Facebook ↗</a></p>
-          <details class="social-live facebook-live">
-            <summary>Show interactive Facebook post</summary>
-            <div class="facebook-embed" data-post-height="603" style="height:603px">
-            <iframe data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid03c2MDm4xpKjxsrhBSqGdkgkqC9vLjoPRaT6Vao2CVtFrXCybuRbbT7kp95Uvi1hXl&amp;show_text=true&amp;width=500" width="500" height="603" title="Facebook post 4 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-          </div>
-          </details>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid03c2MDm4xpKjxsrhBSqGdkgkqC9vLjoPRaT6Vao2CVtFrXCybuRbbT7kp95Uvi1hXl" target="_blank" rel="noopener">Open the original post ↗</a></p>
         </article>
-        <article class="facebook-card facebook-native" aria-label="Facebook update 5 by Md. Mominul Islam">
-          <header class="post-profile">
-            <a class="post-profile-photo" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener" aria-label="View my Facebook profile"><img src="assets/mominul.jpg" width="44" height="44" alt="Portrait of Md. Mominul Islam" loading="lazy"></a>
-            <div class="post-profile-meta"><a class="post-profile-name" href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">Md. Mominul Islam</a><span class="post-platform">Facebook</span></div>
-          </header>
-          <div class="facebook-preview">
-            <p>Between heritage and serenity!<br>Dinajpur || Apr 2026</p>
-            <div class="post-media post-media-gallery"><a href="assets/facebook-post-5-1.jpg" target="_blank" rel="noopener" aria-label="View full photo"><img src="assets/facebook-post-5-1.jpg" width="370" height="518" alt="Dinajpur travel photo 1" loading="lazy" decoding="async"></a><a href="assets/facebook-post-5-2.jpg" target="_blank" rel="noopener" aria-label="View full photo"><img src="assets/facebook-post-5-2.jpg" width="166" height="247" alt="Dinajpur travel photo 2" loading="lazy" decoding="async"></a><a href="assets/facebook-post-5-3.jpg" target="_blank" rel="noopener" aria-label="View full photo"><img src="assets/facebook-post-5-3.jpg" width="179" height="247" alt="Dinajpur travel photo 3" loading="lazy" decoding="async"></a></div>
+        <article class="facebook-card" aria-label="Public Facebook post 5 by Md. Mominul Islam">
+          <div class="facebook-embed" data-post-height="677" style="height:677px">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0pXT2nonEvkBj5dDAcH8ygcBERNXFddj7RLWoTstrDHrMzfrJFYQbzvoL59UpLQ7ul&amp;show_text=true&amp;width=500" width="500" height="677" title="Facebook post 5 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
-          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0pXT2nonEvkBj5dDAcH8ygcBERNXFddj7RLWoTstrDHrMzfrJFYQbzvoL59UpLQ7ul" target="_blank" rel="noopener">View on Facebook ↗</a></p>
-          <details class="social-live facebook-live">
-            <summary>Show interactive Facebook post</summary>
-            <div class="facebook-embed" data-post-height="677" style="height:677px">
-            <iframe data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmmi006%2Fposts%2Fpfbid0pXT2nonEvkBj5dDAcH8ygcBERNXFddj7RLWoTstrDHrMzfrJFYQbzvoL59UpLQ7ul&amp;show_text=true&amp;width=500" width="500" height="677" title="Facebook post 5 by Md. Mominul Islam" loading="lazy" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-          </div>
-          </details>
+          <p class="facebook-fallback"><a href="https://www.facebook.com/mmi006/posts/pfbid0pXT2nonEvkBj5dDAcH8ygcBERNXFddj7RLWoTstrDHrMzfrJFYQbzvoL59UpLQ7ul" target="_blank" rel="noopener">Open the original post ↗</a></p>
         </article>
         <p class="facebook-profile-link"><a href="https://www.facebook.com/mmi006" target="_blank" rel="noopener">More updates on my Facebook profile ↗</a></p>
       </section><footer>
@@ -1042,20 +940,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 })();
 </script>
 
-<script>
-/* The local previews stay readable before any interactive social frame is requested. */
-(function(){
-  document.querySelectorAll('.social-live').forEach(function(details){
-    details.addEventListener('toggle', function(){
-      if (!details.open) return;
-      var frame = details.querySelector('iframe[data-src]');
-      if (frame && !frame.hasAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
-    });
-  });
-})();
-</script>
 </body>
 </html>
-
 
 
