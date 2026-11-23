@@ -295,6 +295,7 @@ details.review[open] .review-list{animation:drop .45s var(--ease);}
 .soft{margin-top:28px; display:grid; grid-template-columns:minmax(0,1fr) 210px; gap:24px; align-items:center; border-radius:16px; padding:20px 22px; color:var(--ink);
   background:linear-gradient(135deg, color-mix(in srgb, var(--teal) 14%, var(--card)), color-mix(in srgb, var(--sky) 11%, var(--card))); border:1px solid color-mix(in srgb, var(--teal) 35%, var(--line)); transition:transform .4s var(--ease), box-shadow .4s;}
 .soft:hover{transform:translateY(-4px); box-shadow:0 20px 30px -20px var(--teal);}
+.soft > :only-child{grid-column:1 / -1;}
 .soft h3{font-size:18px; margin-bottom:6px;}
 .soft p{color:var(--ink-2); font-size:13px; margin-bottom:12px; max-width:56ch;}
 .soft .links{display:flex; flex-wrap:wrap; gap:8px;}
@@ -576,9 +577,19 @@ body.viewer-open{overflow:hidden;}
           </div>
           <div class="map"><img src="assets/floodml_map.png" alt="Flood susceptibility class map produced with FloodML-Geo" loading="lazy" onerror="this.closest('.map').style.display='none'"></div>
         </div>
+        <article class="soft rv" id="colophon">
+          <div>
+            <h3>Colophon, a manuscript reference verifier</h3>
+            <p>Colophon compares in-text citations with the reference list in a Word document or a PDF with selectable text. It flags citations missing from the bibliography and lists references never cited in the manuscript.</p>
+            <p>The manuscript audit runs in your browser. You can also paste a reference list to look up DOIs through Crossref and check source URLs.</p>
+            <div class="links">
+              <a class="btn primary" href="https://colophoncheck.netlify.app/" target="_blank" rel="noopener">Open Colophon</a>
+            </div>
+          </div>
+        </article>
       </section><footer>
           <span>© <span id="year"></span> Md. Mominul Islam, Sylhet, Bangladesh</span>
-          <span>Last updated 26 October 2026</span>
+          <span>Last updated 23 November 2026</span>
         </footer></main>
   </div>
 </div>
